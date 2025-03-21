@@ -1,5 +1,5 @@
 body {
-    background-color: papayawhip;
+    background-color: papayawhip   ;
     color: maroon;
     font-family: Arial;
     margin: 0px;
@@ -33,7 +33,9 @@ footer {
 }
 
 a {
-    text-decoration: none
+    color: #000;
+    text-decoration: none;
+    transition: 2s 1s ;
 }
 a:link {
     color: rgb(196, 13, 13);
@@ -48,7 +50,7 @@ a:hover {
     color: rgb(211, 148, 148);
     text-decoration: underline;
     background-color: rgb(255, 255, 255);
-    text-shadow: 8px 5px 5px rgba(61, 13, 2, 0.5);
+    transition: 0.3s;
 }
 a:active {
     color: rgb(255, 255, 255);
