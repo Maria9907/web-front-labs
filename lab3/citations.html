@@ -1,354 +1,338 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Матюшкина Мария Дмитриевна. Оформление текста</title>
-    <link rel="stylesheet" href="../main.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel=" icon" href="favicon-16x16.png" >
-    <link rel=" icon" href="favicon-32x32.png" >
-    <style>
-        .citation {
-            border: 1px solid red;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 10px 10px 5px #0002;
-            background: linear-gradient(to right top,red,orange, gold,green,rgb(0, 217, 255),blue,rgb(115, 0, 255));
-        }
-        .text {
-            font-size: 30px;
-            font-weight: bold;
-            text-align: center;
-        }
-        .author {
-            text-align:right;
-            font-size: 30px;
-            opacity: 0.8;
-            margin-top: 30px;
-            margin-left: 50%;
-        }
-        .citation2 {
-            border: 3px solid rgb(183, 77, 164);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.133);
-            background: linear-gradient(to right ,rgb(229, 188, 112)  ,rgb(223, 147, 147));
-        }
-        .text2 {
-            font-size: 30px;
-            font-weight: bold;
-            text-align: center;
-            color: rgb(107, 7, 70);
-        }
-        .author2 {
-            text-align:right;
-            font-size: 30px;
-            margin-top: 20px;
-            color: rgb(109, 1, 98);
-        }
-        .citation3 {
-            border: 3px solid rgb(46, 133, 143);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px;
-            box-shadow: 15px 15px 10px rgba(51, 22, 185, 0.133);
-            background-color: rgb(30, 27, 90);
-
-        }
-        .text3{
-            font-size: 25px;
-            text-align: justify;
-            font-weight: bold
-        }
-        .author3 {
-            text-align:right;
-            font-size: 23px;
-            font-weight: bold
-        }
-        .citation4 {
-            background-color: #ffcc00;
-            border-radius: 10px;
-            padding: 15px;
-            margin-left: 340px;
-            margin-right: 340px;
-        }
-        .text4 {
-            font-family: 'comic sans ms';
-            font-size: 29px;
-            
-            text-align: center;
-        }
-        .author4 {
-            font-family: 'comic sans ms';
-            text-align: center;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .citation5 {
-            border: 6px solid rgb(8, 99, 84);
-            border-radius: 10px;
-            margin: 10px;
-            background-color: rgb(8, 82, 22);
-            margin-left: 240px;
-            margin-right: 240px;
-        }
-        .text5 {
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-size: 20px;
-            font-style: italic;
-        }
-        .author5 {
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-size: 20px;
-            text-align:right;
-        }
-        .citation6 {
-            padding: 10px;
-            border-radius: 10px;
-            margin: 10px;
-            background: linear-gradient(to left ,rgb(236, 153, 0)  ,rgb(83, 23, 73));
-        }
-        .text6,  .author6 {
-            font-family: DejaVu Sans Mono, monospace;
-            font-weight: bold;
-            font-size: 30px;
-            text-align: center;
-        }
-        .author6 {
-            text-align: right;
-        }
-        .citation7 {
-            border: 4px solid rgb(51, 158, 9);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px;
-            background: linear-gradient(to right top,rgb(251, 214, 147),rgb(144, 255, 144),rgb(123, 123, 230));
-
-        }
-        .text7 , .author7{
-            font-family: 'comic sans ms';
-            text-align: center;
-            font-weight: bold;
-            font-size: 24px;
-            color: black;
-        }
-        .citation8 {
-            border: 8px solid rgb(200, 146, 210);
-            padding: 10px;
-            border-radius: 15px;
-            margin: 10px;
-            background-color: rgb(180, 180, 180);
-        }
-        .text8 {
-            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-weight: bold;
-            font-style: italic;
-            font-size: 20px;
-            text-align: right;
-            ;
-        }
-        .author8 {
-            font-size: 25px;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            text-align: left;
-            font-weight: bold;
-            color: rgb(106, 50, 106);
-        }
-        .citation9 {
-            background-color: #c93f30;
-            border-radius: 10px;
-            padding: 15px;
-            margin-left: 140px;
-            margin-right: 140px;
-        }
-        .text9 {
-            font-family: 'comic sans ms';
-            font-size: 24px;
-            color: black;
-            text-align: center;
-        }
-        .author9 {
-            font-family: 'comic sans ms';
-            text-align: right;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .citation10 {
-            border: 3px solid rgb(183, 77, 164);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px;
-            box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.133);
-            background: linear-gradient(to right top,rgb(221, 203, 168)  ,rgb(240, 200, 69), rgb(237, 133, 77),rgb(236, 73, 19));
-        }
-        .text10 {
-            font-size: 30px;
-            text-align: center;
-            color: rgb(107, 7, 70);
-            font-family:'Gill Sans' ;
-        }
-        .author10 {
-            text-align:right;
-            font-size: 30px;
-            margin-top: 20px;
-            color: rgb(255, 245, 57);
-        }
-        .citation11 {
-            padding: 10px;
-            border-radius: 15px;
-            margin: 15px;
-            background-color: antiquewhite;
-            margin-left: 140px;
-            margin-right: 140px;
-        }
-        .text11 {
-            font-size: 25px;
-            text-align: justify;
-            font-weight: bold;
-            box-shadow: 5px 6px 4px rgba(51, 22, 185);
-            opacity: 0.8;
-            color: #340086;
-
-        }
-        .author11 {
-            text-align:center;
-            font-size: 23px;
-            color: #340086;
-            font-weight: bold;
-        }
-
-
-
-
-
-
-    </style>
-</head>
-<body>
-    <header>
-        НГТУ, ФБ, Лабораторная 3
-    </header>
-    <main>
-        <div class="citation">
-            <div class="text">
-                Стремитесь не к успеху, а к ценностям, которые он дает.
-            </div> 
-            <div class="author">
-                Альберт Эйнштейн
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Оформление текста</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <style>
+            .citation {
+                border: 1px solid red;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px;
+                box-shadow: 10px 10px 5px #0002;
+                background: linear-gradient(to right top,red,orange, gold,green,rgb(0, 217, 255),blue,rgb(115, 0, 255));
+            }
+            .text {
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+            }
+            .author {
+                text-align:right;
+                font-size: 30px;
+                opacity: 0.8;
+                margin-top: 30px;
+                margin-left: 50%;
+            }
+            .citation2 {
+                border: 3px solid rgb(183, 77, 164);
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px;
+                box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.133);
+                background: linear-gradient(to right ,rgb(229, 188, 112)  ,rgb(223, 147, 147));
+            }
+            .text2 {
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+                color: rgb(107, 7, 70);
+            }
+            .author2 {
+                text-align:right;
+                font-size: 30px;
+                margin-top: 20px;
+                color: rgb(109, 1, 98);
+            }
+            .citation3 {
+                border: 3px solid rgb(46, 133, 143);
+                padding: 10px;
+                border-radius: 5px;
+                margin: 10px;
+                box-shadow: 15px 15px 10px rgba(51, 22, 185, 0.133);
+                background-color: rgb(30, 27, 90);
+            }
+            .text3{
+                font-size: 25px;
+                text-align: justify;
+                font-weight: bold
+            }
+            .author3 {
+                text-align:right;
+                font-size: 23px;
+                font-weight: bold
+            }
+            .citation4 {
+                background-color: #ffcc00;
+                border-radius: 10px;
+                padding: 15px;
+                margin-left: 340px;
+                margin-right: 340px;
+            }
+            .text4 {
+                font-family: 'comic sans ms';
+                font-size: 29px;
+                
+                text-align: center;
+            }
+            .author4 {
+                font-family: 'comic sans ms';
+                text-align: center;
+                font-weight: bold;
+                font-size: 24px;
+            }
+            .citation5 {
+                border: 6px solid rgb(8, 99, 84);
+                border-radius: 10px;
+                margin: 10px;
+                background-color: rgb(8, 82, 22);
+                margin-left: 240px;
+                margin-right: 240px;
+            }
+            .text5 {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 20px;
+                font-style: italic;
+            }
+            .author5 {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 20px;
+                text-align:right;
+            }
+            .citation6 {
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+                background: linear-gradient(to left ,rgb(236, 153, 0)  ,rgb(83, 23, 73));
+            }
+            .text6,  .author6 {
+                font-family: DejaVu Sans Mono, monospace;
+                font-weight: bold;
+                font-size: 30px;
+                text-align: center;
+            }
+            .author6 {
+                text-align: right;
+            }
+            .citation7 {
+                border: 4px solid rgb(51, 158, 9);
+                padding: 20px;
+                border-radius: 15px;
+                margin: 20px;
+                background: linear-gradient(to right top,rgb(251, 214, 147),rgb(144, 255, 144),rgb(123, 123, 230));
+            }
+            .text7 , .author7{
+                font-family: 'comic sans ms';
+                text-align: center;
+                font-weight: bold;
+                font-size: 24px;
+                color: black;
+            }
+            .citation8 {
+                border: 8px solid rgb(200, 146, 210);
+                padding: 10px;
+                border-radius: 15px;
+                margin: 10px;
+                background-color: rgb(180, 180, 180);
+            }
+            .text8 {
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: bold;
+                font-style: italic;
+                font-size: 20px;
+                text-align: right;
+            }
+            .author8 {
+                font-size: 25px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-align: left;
+                font-weight: bold;
+                color: rgb(106, 50, 106);
+            }
+            .citation9 {
+                background-color: #c93f30;
+                border-radius: 10px;
+                padding: 15px;
+                margin-left: 140px;
+                margin-right: 140px;
+            }
+            .text9 {
+                font-family: 'comic sans ms';
+                font-size: 24px;
+                color: black;
+                text-align: center;
+            }
+            .author9 {
+                font-family: 'comic sans ms';
+                text-align: right;
+                font-weight: bold;
+                font-size: 24px;
+            }
+            .citation10 {
+                border: 3px solid rgb(183, 77, 164);
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px;
+                box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.133);
+                background: linear-gradient(to right top,rgb(221, 203, 168)  ,rgb(240, 200, 69), rgb(237, 133, 77),rgb(236, 73, 19));
+            }
+            .text10 {
+                font-size: 30px;
+                text-align: center;
+                color: rgb(107, 7, 70);
+                font-family:'Gill Sans' ;
+            }
+            .author10 {
+                text-align:right;
+                font-size: 30px;
+                margin-top: 20px;
+                color: rgb(255, 245, 57);
+            }
+            .citation11 {
+                padding: 10px;
+                border-radius: 15px;
+                margin: 15px;
+                background-color: antiquewhite;
+                margin-left: 140px;
+                margin-right: 140px;
+            }
+            .text11 {
+                font-size: 25px;
+                text-align: justify;
+                font-weight: bold;
+                box-shadow: 5px 6px 4px rgba(51, 22, 185);
+                opacity: 0.8;
+                color: #340086;
+            }
+            .author11 {
+                text-align:center;
+                font-size: 23px;
+                color: #340086;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная 3
+            <hr>
+        </header>
+        <main>
+            <div class="citation">
+                <div class="text">
+                    Стремитесь не к успеху, а к ценностям, которые он дает.
+                </div> 
+                <div class="author">
+                    Альберт Эйнштейн
+                </div>
             </div>
-        </div>
 
-        <div class="citation2">
-            <div class="text2">
-                ❝ Вот так всегда: для кого-то балласт, а для кого-то сокровище. ❞
-
-
-            </div> 
-            <div class="author2">
-                Нюша
+            <div class="citation2">
+                <div class="text2">
+                    ❝ Вот так всегда: для кого-то балласт, а для кого-то сокровище. ❞
+                </div> 
+                <div class="author2">
+                    Нюша
+                </div>
             </div>
-        </div>
 
-        <div class="citation3">
-            <div class="text3">
-                  — Самый полезный опыт, это познать не свой характер, а характер своего друга, и вовремя сделать выводы. 
-            <div class="text3">
-                    — Или ноги.  
+            <div class="citation3">
+                <div class="text3">
+                    — Самый полезный опыт, это познать не свой характер, а характер своего друга, и вовремя сделать выводы. 
+                </div>
+                <div class="text3">
+                            — Или ноги.  
+                </div> 
+                <div class="author3">
+                    Ёжик, Бараш  
+                </div>
             </div>
-            </div> 
-            <div class="author3">
-                Ёжик, Бараш  
-            </div>
-        </div>
 
-        <div class="citation4">
-            <div class="text4">
-                ❝ Солнце светит — хорошо, не светит — тоже хорошо, я сам себе солнце. ❞
-            </div> 
-            <div class="author4">
-                Крош
+            <div class="citation4">
+                <div class="text4">
+                    ❝ Солнце светит — хорошо, не светит — тоже хорошо, я сам себе солнце. ❞
+                </div> 
+                <div class="author4">
+                    Крош
+                </div>
             </div>
-        </div>
 
-        <div class="citation5">
-            <div class="text5">
-                ❝ Можно всю жизнь прождать подходящий момент и в итоге так и не сказать друг другу что-то важное. ❞
-
-            </div> 
-            <div class="author5">
-                Кар-Карыч
+            <div class="citation5">
+                <div class="text5">
+                    ❝ Можно всю жизнь прождать подходящий момент и в итоге так и не сказать друг другу что-то важное. ❞
+                </div> 
+                <div class="author5">
+                    Кар-Карыч
+                </div>
             </div>
-        </div>
 
-        <div class="citation6">
-            <div class="text6">
-                 — Давай! Ёжик, давай! Ещё кругов тридцать и мы уснём как младенцы! 
-            </div> 
-            <div class="text6">
-                 — Ещё полкруга и я усну навсегда. 
-            </div> 
-            <div class="author6">
-                Ёжик, Бараш  
+            <div class="citation6">
+                <div class="text6">
+                    — Давай! Ёжик, давай! Ещё кругов тридцать и мы уснём как младенцы! 
+                </div> 
+                <div class="text6">
+                    — Ещё полкруга и я усну навсегда. 
+                </div> 
+                <div class="author6">
+                    Ёжик, Бараш  
+                </div>
             </div>
-        </div>
 
-        <div class="citation7">
-            <div class="text7">
-                ❝ А вдруг окажется, что смысл жизни — не есть сладкого и не спать до двенадцати? Я тогда только расстроюсь... ❞
-            </div> 
-            <div class="author7">
-                Кар-Карыч
+            <div class="citation7">
+                <div class="text7">
+                    ❝ А вдруг окажется, что смысл жизни — не есть сладкого и не спать до двенадцати? Я тогда только расстроюсь... ❞
+                </div> 
+                <div class="author7">
+                    Кар-Карыч
+                </div>
             </div>
-        </div>
 
-        <div class="citation8">
-            <div class="text8">
-                Да хаос нас окружает постоянно! Весь мир, как почта. Мало того, что мы шлём не то и не тем, так это ещё и не доходит. 
-            </div> 
-            <div class="author8">
-                Бараш
+            <div class="citation8">
+                <div class="text8">
+                    Да хаос нас окружает постоянно! Весь мир, как почта. Мало того, что мы шлём не то и не тем, так это ещё и не доходит. 
+                </div> 
+                <div class="author8">
+                    Бараш
+                </div>
             </div>
-        </div>
 
-        <div class="citation9">
-            <div class="text9">
-                — Ладно, не хнычь. Что-нибудь придумаем. Правда, Ёжик? Или ты уже не Ёжик? 
-            </div> 
-            <div class="text9">
-                — Зови меня «хозяин» — не ошибешься. 
-            </div> 
-            <div class="author9">
-                Ёжик, Бараш  
+            <div class="citation9">
+                <div class="text9">
+                    — Ладно, не хнычь. Что-нибудь придумаем. Правда, Ёжик? Или ты уже не Ёжик? 
+                </div> 
+                <div class="text9">
+                    — Зови меня «хозяин» — не ошибешься. 
+                </div> 
+                <div class="author9">
+                    Ёжик, Бараш  
+                </div>
             </div>
-        </div>
-        <div class="citation10">
-            <div class="text10">
-                Ты — раритет, я — раритет. Выходит, мы с тобой какая-то своеобразная коллекция… 
-            </div> 
-            <div class="author10">
-                Ёжик
+            <div class="citation10">
+                <div class="text10">
+                    Ты — раритет, я — раритет. Выходит, мы с тобой какая-то своеобразная коллекция… 
+                </div> 
+                <div class="author10">
+                    Ёжик
+                </div>
             </div>
-        </div>
-        <div class="citation11">
-            <div class="text11   ">
-                Болезнь, как некоторых гостей, надо выводить в самом начале, когда они только пришли, 
-                а чемоданы ещё не распаковали, а то потом как поселятся, и уже не поймёшь, кто в доме хозяин.
-            </div> 
-            <div class="author11">
-                Совунья
+            <div class="citation11">
+                <div class="text11   ">
+                    Болезнь, как некоторых гостей, надо выводить в самом начале, когда они только пришли, 
+                    а чемоданы ещё не распаковали, а то потом как поселятся, и уже не поймёшь, кто в доме хозяин.
+                </div> 
+                <div class="author11">
+                    Совунья
+                </div>
             </div>
-        </div>
-        
-
-      
-
-    </main>
-    <footer>
-        &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
-    </footer>
-    
-</body>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
 </html>
