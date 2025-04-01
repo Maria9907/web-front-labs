@@ -10,101 +10,57 @@
     <link rel=" icon" href="../favicon-16x16.png">
     <link rel=" icon" href="../favicon-32x32.png">
     <style>
-        .p {
-            font-weight: bold;
-            text-align: center;
-            font-size: 34px;
-        }
+       .p {
+        font-weight: bold;
+        text-align: center;
+        font-size: 34px;
+    }
 
-        /* Общие стили для блоков */
-        .b,
-        .c,
-        .n {
-            width: 30%;
-            border: 2px solid;
-            display: inline-block;
-            text-align: center;
-            vertical-align: top;
-            margin: 17px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 1s 1s;
-        }
+    /* Базовые стили блоков */
+    .b, .c, .n {
+        width: 30%;
+        margin: 17px;
+        padding: 0 20px;
+        border: 2px solid #aaa;
+        border-radius: 5px;
+        background: #f5f5f5;
+        cursor: pointer;
+        height: 80px;
+        overflow: hidden;
+        transition: all 0.5s ease 2s; /* Задержка 2 сек при уходе */
+    }
 
-        /* Скрываем текст по умолчанию */
-        .b div,
-        .c div,
-        .n div {
-            display: none;
-            padding: 20px;
-            color: maroon;
-        }
+    /* Скрытый контент */
+    .b div, .c div, .n div {
+        opacity: 0;
+        height: 0;
+        padding: 0 10px;
+        transition: all 0.5s ease;
+    }
 
-        /* Стили при наведении на блок */
-        .b:hover,
-        .c:hover,
-        .n:hover {
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
-            border-radius: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-            transform: scale(105%);
-            transition: 2s;
-        }
+    /* Стили при наведении */
+    .b:hover, .c:hover, .n:hover {
+        height: auto;
+        padding: 0 10px;
+        border-radius: 15px;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+        transition: all 0.5s ease; /* Без задержки при наведении */
+    }
 
-        /* Показываем текст при наведении */
-        .b:hover div,
-        .c:hover div,
-        .n:hover div {
-            display: block;
-        }
+    .b:hover div, .c:hover div, .n:hover div {
+        opacity: 1;
+        height: auto;
+        padding: 20px 10px;
+        transition: all 0.5s ease;
+    }
 
-        /* Стили для заголовков */
-        h1 {
-            text-align: center;
-            padding: 17px;
-            margin: 0;
-            color: #feece0;
-            font-size: 24px;
-            transition: 1s 1s;
-        }
-
-        h1:hover {
-            color: maroon;
-            font-size: 29px;
-            text-decoration: underline;
-            transition: 0.3s;
-        }
-
-        /* Индивидуальные стили для блоков */
-        .b div {
-            color: maroon;
-        }
-
-        .b:hover {
-            color: rgb(99, 7, 7);
-            background-color: papayawhip;
-
-        }
-
-        .c div {
-            color: rgb(29, 21, 108);
-        }
-
-        .c:hover {
-            color: rgb(27, 8, 100);
-            background-color: rgb(196, 191, 185);
-
-        }
-
-        .n div {
-            color: rgb(8, 73, 14);
-        }
-
-        .n:hover {
-            color: rgb(9, 105, 20);
-            background-color: rgb(210, 198, 179);
-        }
+    /* Заголовки */
+    h1 {
+        padding: 20px;
+        margin: 0;
+        color: #333;
+        text-align: center;
+    }
     </style>
 </head>
 
