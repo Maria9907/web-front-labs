@@ -15,7 +15,6 @@
             text-align: center;
             font-size: 34px;
         }
-
         /* Общие стили для блоков */
         .b,
         .c,
@@ -25,19 +24,29 @@
             display: inline-block;
             text-align: center;
             vertical-align: top;
+            box-shadow: 5px 5px 10px rgba(231, 224, 224, 0.4);
             margin: 17px;
             border-radius: 5px;
             cursor: pointer;
-            transition: 1s 1s;
+            overflow: hidden; 
+            transition: all 2s; 
+            
         }
-
         /* Скрываем текст по умолчанию */
         .b div,
         .c div,
         .n div {
-            display: none;
+            opacity: 0 ;
+            max-height: 0;
             padding: 20px;
+            overflow: hidden;
             color: maroon;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            transition: 
+            opacity 2s ease,
+            max-height 2s ease,
+            padding 2s ease;
         }
 
         /* Стили при наведении на блок */
@@ -48,32 +57,46 @@
             border-radius: 20px;
             font-family: 'Courier New', Courier, monospace;
             font-weight: bold;
-            transform: scale(105%);
-            transition: 2s;
+            transform: scale(1.05);
         }
 
         /* Показываем текст при наведении */
         .b:hover div,
         .c:hover div,
         .n:hover div {
-            display: block;
+        opacity: 1;
+        max-height: 1000px; 
+        padding: 20px;
+        transition: 
+            opacity 2s ease,
+            max-height 2s ease,
+            padding 2s ease;
         }
+        
+        .b:not(:hover) div,
+        .c:not(:hover) div,
+        .n:not(:hover) div {
+            transition: opacity 2s ease, max-height 2s ease, padding 2s ease;
+            transition-delay: 4s; /* Задержка перед началом исчезновения текста */
+        }
+
 
         /* Стили для заголовков */
         h1 {
             text-align: center;
             padding: 17px;
             margin: 0;
-            color: #feece0;
+            color: #fee9e9;
             font-size: 24px;
-            transition: 1s 1s;
+            transition: 1.9s;
+            
         }
 
         h1:hover {
             color: maroon;
             font-size: 29px;
             text-decoration: underline;
-            transition: 0.3s;
+            
         }
 
         /* Индивидуальные стили для блоков */
