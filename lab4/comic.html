@@ -9,82 +9,69 @@
         <link rel=" icon" href="../favicon-16x16.png">
         <link rel=" icon" href="../favicon-32x32.png">
         <style>
-            
-
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 80vh; /* Минимальная высота, чтобы контент занимал хотя бы часть экрана */
-        }
-
-        .w {
-            position: relative;
-            width: 600px;
-            height: auto; 
-            margin: 20px;
-            border: 1px solid #ccc;
-            overflow: hidden; /* Чтобы облачка не вылезали за пределы контейнера */
-            
-        }
-
-        .w img {
-            width: 100%;
-            height: auto;
-            display: block;
-            
-        }
-
-        .position-absolute {
-            position: absolute;
-            background-color: rgba(140, 234, 238, 0.8); 
-            border: 2px solid #666;
-            color: #131c7c;
-            border-radius: 50%;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 2px 3px 4px rgba(250, 3, 246, 0.3);
-            opacity: 0; 
-            transition: opacity 0.5s ease-in-out; 
-        }
-
-        .w:hover .position-absolute{
-            opacity: 1; 
-        }
-
-        /* Размещаем облачка */
-        .position-absolute:nth-child(2) { /* Первое облачко */
-            top: 46%;
-            left: 70%;
-            width: 13px;
-            height: 3px;
-        }
-
-        .position-absolute:nth-child(3) { /* Второе облачко */
-            top: 38%;
-            left: 74%;
-            width: 20px;
-            height: 8px;
-            transition-delay: 0.2s;
-        }
-
-        .position-absolute:nth-child(4) { /* Третье облачко */
-            top: 30%;
-            left: 80%;
-            width: 25px;
-            height: 10px;
-            transition-delay: 0.4s; 
-        }
-
-        .position-absolute:nth-child(5) { /* Облачко с текстом */
-            top: 15%;
-            left: 80%;
-            width: 100px;
-            height: 50px;
-            font-size: 19px;
-            font-family: 'comic sans ms';
-            transition-delay: 0.6s; 
-        }
+            main {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 80vh; 
+            }
+            .w {
+                position: relative;
+                width: 600px;
+                height: auto; 
+                margin: 20px;
+                border: 1px solid #ccc;
+            }
+            .w img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .position-absolute {
+                position: absolute;
+                background-color: rgba(140, 234, 238, 0.8); 
+                border: 2px solid #666;
+                color: #131c7c;
+                border-radius: 50%;
+                padding: 10px;
+                text-align: center;
+                box-shadow: 2px 3px 4px rgba(250, 3, 246, 0.3);
+                opacity: 0; 
+                transition: opacity 0.5s ease-in-out; 
+            }
+            .w:hover .position-absolute{
+                opacity: 1; 
+            }
+            /* Размещаем облачка */
+            .position-absolute:nth-child(2) { 
+                top: 46%;
+                left: 70%;
+                width: 13px;
+                height: 3px;
+            }
+            .position-absolute:nth-child(3) { 
+                top: 38%;
+                left: 74%;
+                width: 20px;
+                height: 8px;
+                transition-delay: 0.2s;
+            }
+            .position-absolute:nth-child(4) {
+                top: 30%;
+                left: 80%;
+                width: 25px;
+                height: 10px;
+                transition-delay: 0.4s; 
+            }
+            .position-absolute:nth-child(5) { 
+                top: 15%;
+                left: 80%;
+                width: 100px;
+                height: 50px;
+                font-size: 19px;
+                font-family: 'comic sans ms';
+                transition-delay: 0.6s; 
+            }
         
         </style>
     </head>
@@ -96,18 +83,12 @@
         <main>
             <div class="w">
                 <img src="scale_1200.png" alt="Профессор Фарнсворт" > 
-           
-             
-             <div  class="position-absolute"></div>
-             <div  class="position-absolute"></div>
-             <div  class="position-absolute"></div>
-             <div class="position-absolute">Всё будет хорошо...</div>
-            
+                <div  class="position-absolute"></div>
+                <div  class="position-absolute"></div>
+                <div  class="position-absolute"></div>
+                <div class="position-absolute">Всё будет хорошо...</div>
             </div>
 
-
-           
-           
         </main>
         <footer>
             <hr>
