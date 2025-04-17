@@ -15,7 +15,14 @@
                 let result = a + b;
                 alert( 'Сумма ' + a + ' и ' + b + ' равна ' + result);
             }
-            
+            function showAuthor() {
+                let author = 'Автор страницы: \nМатюшкина Мария Дмитриевна';
+                alert(author);
+            }
+            function showDeviz() {
+                let author = 'Привет! Вы на странице с моими лабораторными работами по веб-программированию\nДевиз:\nЖизнь слишком коротка, чтобы тратить ее на плохое настроение:)';
+                alert(author);
+            }
         </script>
         <style>
          
@@ -34,22 +41,29 @@
                 font-size: 25px;
                 padding: 5px;
                 color: black;
-            
             }
+            header {
+                cursor: pointer;
+            }
+            footer {
+                cursor: pointer;
+            }
+            
+            
 
         </style>
     </head>
     <body>
-        <header>
+        <header onclick="showAuthor()">
             НГТУ, ФБ, Лабораторная работа 4
             <hr>
         </header>
         <main>
             <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
-            <div class="message">Узнать, кто автор страницы</div>
+            <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
 
         </main>
-        <footer>
+        <footer ondblclick="showDeviz()">
             <hr>
             &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
         </footer>
