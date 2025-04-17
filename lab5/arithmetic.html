@@ -13,12 +13,37 @@
                 let inputA = document.getElementById('numberA');
                 let inputB = document.getElementById('numberB');
 
-
                 let a = parseInt(inputA.value);
                 let b = parseInt(inputB.value);
                 let result = a + b;
                 alert( 'Сумма ' + a + ' и ' + b + ' равна ' + result);
             }
+            function showRaz() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a - b;
+                alert( 'Разность ' + a + ' и ' + b + ' равна ' + result);
+            }
+            function showPro() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let result = a * b;
+                alert( 'Произведение ' + a + ' и ' + b + ' равна ' + result);
+            }
+
+
+
+
+
+
+
+
             function showAuthor() {
                 let author = 'Автор страницы: \nМатюшкина Мария Дмитриевна';
                 alert(author);
@@ -67,6 +92,8 @@
             <label style="color: black;">Первое число: <input type="number" value="5154" id="numberA"><br></label>
             <label style="color: black;">Второе число: <input type="number" value="7891" id="numberB"><br></label>
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
+            <div class="message" onclick="showRaz()">Найти разность чисел</div>
+            <div class="message" onclick="showPro()">Найти произведение чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
 
         </main>
