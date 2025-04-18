@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 3</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <script>
+             function calculateTotal() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+                let a = parseInt(inputA.value) ||0;
+                let b = parseInt(inputB.value) ||0;
+                let c = parseInt(inputC.value) ||0;
+                let d = parseInt(inputD.value) ||0;
+                let output= document.getElementById ('output');
+
+                let result = (a*100) + (b*80) + (c*150) + (d*300);
+                output.innerHTML = 'Общая цена: ' +  result + ' рублей';
+            }
+            function clean() {
+                let inputA = document.getElementById('numberA').value = '';
+                let inputB = document.getElementById('numberB').value = '';
+                let inputC = document.getElementById('numberC').value = '';
+                let inputD = document.getElementById('numberD').value = '';
+                let output= document.getElementById ('output').innerHTML = '';
+        
+
+            }
+            
+        </script>
+        <style> 
+            h1 {
+                color: maroon;
+                
+            }
+            .message {
+                color: maroon;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 17px;
+                font-weight: bold;
+                margin: 5px;
+            }
+            .o {
+                border: 6px solid rgb(0, 0, 0);
+                width: 350px;
+                border-radius: 15px;
+                padding-left: 10px;
+                padding-bottom: 10px;
+
+            }
+            #numberA, #numberB,#numberC,#numberD {
+                padding-left: 20px;
+                width: 200px;
+            }
+           #output {
+            color: maroon;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 17px;
+            font-weight: bold;
+           }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+        <main>
+            <div class="o">
+                <h1> Корзина товаров</h1>
+                
+                <div class="message">Яблоки (100р/шт)</div>
+                <label><input type="number" min="0" onkeydown="return event.key !== '-';"  id="numberA" placeholder="Введите количесво яблок" ><br></label>
+                <div class="message" >Груши (80р/шт)</div>
+                <label><input type="number" min="0" onkeydown="return event.key !== '-';" id="numberB"placeholder="Введите количесво груш" ><br></label>
+                <div class="message" >Апельсины (150р/шт)</div>
+                <label><input type="number"min="0"onkeydown="return event.key !== '-';"  id="numberC"placeholder="Введите количесво апельсин" ><br></label>
+                <div class="message" >Дыни (300р/шт)</div>
+                <label><input type="number" min="0" onkeydown="return event.key !== '-';" id="numberD"placeholder="Введите количесво дынь" ><br></label>
+                <input type="button" value="Рассчитать" style="margin: 5px;"onclick="calculateTotal()" >
+                <input type="button" value="Очистить" style="margin: 5px;"onclick="clean()" >
+                <div id="output" ></div>
+            </div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
