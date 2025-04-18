@@ -17,6 +17,7 @@
                 let b = parseInt(inputB.value);
                 let result = a + b;
                 alert( 'Сумма ' + a + ' и ' + b + ' равна ' + result);
+
             }
             function showRaz() {
                 let inputA = document.getElementById('numberA');
@@ -36,13 +37,39 @@
                 let result = a * b;
                 alert( 'Произведение ' + a + ' и ' + b + ' равна ' + result);
             }
+            function showDiv() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                if (b == 0){
+                    alert ('На ноль делить нельзя');
+                    inputB.focus();
+                    inputB.select();
+                    inputB.style.color = 'red';
+                    inputB.style.borderColor = 'red';
+                    return;
+                }
+                if(isNaN(a)){
+                    alert('Введите числовое значение в первое поле');
+                    inputA.style.borderColor = 'red';
+                    inputB.focus();
+                    return;
+                }
+                if(isNaN(b)){
+                    alert('Введите числовое значение во второе поле');
+                    inputB.style.borderColor = 'red';
+                    return;
+                }
+
+                inputB.style.color ='';
+                inputB.style.borderColor = '';
 
 
-
-
-
-
-
+                let result = a / b;
+                alert( 'Отношение ' + a + ' и ' + b + ' равно ' + result);
+            }
 
             function showAuthor() {
                 let author = 'Автор страницы: \nМатюшкина Мария Дмитриевна';
@@ -54,8 +81,6 @@
             }
         </script>
         <style>
-            
-         
             .message {
                 cursor: pointer;
                 width: 300px;
@@ -94,6 +119,7 @@
             <div class="message" onclick="showSum()">Найти сумму чисел</div>
             <div class="message" onclick="showRaz()">Найти разность чисел</div>
             <div class="message" onclick="showPro()">Найти произведение чисел</div>
+            <div class="message" onclick="showDiv()">Найти отношение чисел</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
 
         </main>
