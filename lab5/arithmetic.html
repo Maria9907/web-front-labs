@@ -110,6 +110,17 @@
                 let author = 'Привет! Вы на странице с моими лабораторными работами по веб-программированию\nДевиз:\nЖизнь слишком коротка, чтобы тратить ее на плохое настроение:)';
                 alert(author);
             }
+            function changeOutput(buttonNum, backColor, textColor, borStyle, borWidth, borRadius, borColor) {
+                let output = document.getElementById('output');
+                output.innerHTML = 'Нажата кнопка ' +  buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.borderStyle = borStyle;
+                output.style.borderWidth = borWidth;
+                output.style.borderRadius = borRadius;
+                output.style.borderColor = borColor;
+
+            }
         </script>
         <style>
             .message {
@@ -134,9 +145,14 @@
             footer {
                 cursor: pointer;
             }
+            #output {
+                border: 1px solid;
+                width: 300px;
+                height: 40px;
+                text-align: center;
+                margin: 5px;
+            }
             
-            
-
         </style>
     </head>
     <body>
@@ -153,6 +169,16 @@
             <div class="message" onclick="showDiv()">Найти отношение чисел</div>
             <div class="message" onclick="showKva()">Найти число в степени</div>
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red','yellow','dashed', '2px','10px','yellow')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black','lime','dotted', '3px','15px','lime')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'green','pink','double', '4px','5px','pink')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'orange','blue','groove', '5px','12px','blue')">
+            </div>
+             <div id="output"></div>
+
 
         </main>
         <footer ondblclick="showDeviz()">
