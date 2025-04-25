@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <style>
+            #block {
+                cursor:crosshair;
+                width: 300px;
+                height: 300px;
+                box-shadow: 3px 4px 8px rgb(156, 12, 12);
+                margin: 15px;
+                background-color: rgb(31, 17, 122);
+                left: 35%;
+                position: absolute;
+                padding: 10px;
+                border: 6px solid maroon;
+               
+                
+            }
+            
+        </style>
+        <script>
+            function showCoords(){
+                let x = this.event.x;
+                let y = this.event.y;
+                let div = document.getElementById('block');
+    
+                if(this.event.ctrlKey)
+                    div.style.color = 'red';
+                else
+                    div.style.color = 'black';
+                let ctrl;
+                if(this.event.ctrlKey)
+                    ctrl = ' <br> Нажата клавиша Ctrl';
+                else
+                    ctrl = '';
+
+
+                if(this.event.altKey)
+                    div.style.backgroundColor = 'Green';
+                else
+                    div.style.backgroundColor = ' rgb(31, 17, 122)';
+                let alt;
+                if(this.event.altKey)
+                    alt = '<br> Нажата клавиша Alt';
+                else
+                    alt = '';
+
+
+                    
+                if(this.event.shiftKey)
+                    div.style.border = '6px solid yellow';
+                else
+                    div.style.border = ' 6px solid maroon';
+                let shift;
+                if(this.event.shiftKey)
+                    shift = '<br> Нажата клавиша Shift';
+                else
+                    shift = '';
+
+                div.innerHTML = '<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px' + ctrl + alt + shift;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+        <main>
+            <div id="block" onmousemove="showCoords()"</div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
