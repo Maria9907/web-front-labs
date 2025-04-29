@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <script>
+             function changeOutput( element) {
+                element.style.visibility = "hidden";
+                element.style.transform = "scale(0)";
+                element.style.transition = '1s'
+     
+            
+            }
+            function restore() {
+
+                     document.getElementById('circle1').style.transform = "scale(1)"
+                     document.getElementById('circle1').style.visibility = 'visible';
+                     document.getElementById('circle2').style.transform = "scale(1)"
+                     document.getElementById('circle2').style.visibility = 'visible';
+                     document.getElementById('circle3').style.transform = "scale(1)"
+                     document.getElementById('circle3').style.visibility = 'visible';
+                     document.getElementById('circle4').style.transform = "scale(1)"
+                     document.getElementById('circle4').style.visibility = 'visible';
+                     document.getElementById('circle5').style.transform = "scale(1)"
+                     document.getElementById('circle5').style.visibility = 'visible';
+                     document.getElementById('circle6').style.transform = "scale(1)"
+                     document.getElementById('circle6').style.visibility = 'visible';
+                     document.getElementById('circle7').style.transform = "scale(1)"
+                     document.getElementById('circle7').style.visibility = 'visible';
+                     document.getElementById('circle8').style.transform = "scale(1)"
+                     document.getElementById('circle8').style.visibility = 'visible';
+                     document.getElementById('circle9').style.transform = "scale(1)"
+                     document.getElementById('circle9').style.visibility = 'visible';
+                     document.getElementById('circle10').style.transform = "scale(1)";
+                     document.getElementById('circle10').style.visibility = 'visible';
+            }
+        </script>
+        <style>
+            div {
+                border-radius: 100%;
+                height: 60px;
+                width: 60px;
+                color: rgb(2, 1, 1);
+                border: 1px solid maroon;
+                display: flex;
+                justify-content: center; 
+                align-items: center;  
+                position: absolute;  
+                font-size: 20px; 
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bolder;
+                cursor: pointer;
+               
+            }
+            #s {
+                background-color: maroon;
+                color: antiquewhite;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+            <hr>
+        </header>
+        <main>
+            <div id="circle1" onclick="changeOutput(this)" style =" background-color:rgb(214, 61, 61); left:42%; top:500px;" >1</div>
+            <div id="circle2" onclick="changeOutput(this)" style =" background-color:rgb(206, 156, 156); left:30%; top:400px;">2</div>
+            <div id="circle3" onclick="changeOutput(this)" style =" background-color:rgb(112, 97, 225); left:20%; top:240px;">3</div>
+            <div id="circle4" onclick="changeOutput(this)" style =" background-color:rgb(54, 215, 215); left:60%; top:350px;">4</div>
+            <div id="circle5" onclick="changeOutput(this)" style =" background-color:rgb(123, 151, 206); left:70%; top:280px;">5</div>
+            <div id="circle6" onclick="changeOutput(this)" style =" background-color:rgb(207, 89, 197); left:80%; top:160px;">6</div>
+            <div id="circle7" onclick="changeOutput(this)" style =" background-color:rgb(142, 191, 112); left:90%; top:200px;">7</div>
+            <div id="circle8" onclick="changeOutput(this)" style =" background-color:rgb(135, 245, 99); left:50%; top:300px;">8</div>
+            <div id="circle9" onclick="changeOutput(this)" style =" background-color:rgb(48, 104, 217); left:38%; top:150px;" >9</div>
+            <div id="circle10" onclick="changeOutput(this)" style =" background-color:rgb(203, 34, 189); left:55%; top:430px;">10</div>
+            <input  id="s" type="button" value="Вернуть" style="margin: 5px;"onclick="restore()" >
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
