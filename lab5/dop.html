@@ -10,19 +10,19 @@
         <link rel=" icon" href="../favicon-32x32.png">
         <style>
             img {
-                    height: 50%;
-                    width: 50%;
-                    display: block;
-                    margin-left: auto; 
-                    margin-right: auto;
-                    padding: 15px;
-                }
-                div {
-                    color: #000;
-                    text-align: center;
-                    font-family: 'Times New Roman', Times, serif;
-                    font-weight: bold;
-                }
+                height: 50%;
+                width: 50%;
+                display: block;
+                margin-left: auto; 
+                margin-right: auto;
+                padding: 15px;
+            }
+            div {
+                color: #000;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-weight: bold;
+            }
         </style>
         <script>
             function showCoords(event) {
@@ -33,12 +33,10 @@
                 let filter = 'blur';  
                 let filterUnit = 'px';
                 
-    
                 if (event.ctrlKey) {
                     filter = 'grayscale';
                     filterValue = (mouseX / imageWidth) * 500;
                     filterUnit = '%';
-
                 } else if (event.altKey) {  
                     filter = 'contrast';
                     filterValue = (mouseX / imageWidth) * 500;
@@ -48,17 +46,14 @@
                     filterValue = (mouseX / imageWidth) * 100;
                     filterUnit = '%';
                 }
-                
-                blurImage.style.filter = filter + '(' + filterValue + filterUnit + ')';
-                showFilterInfo(filter, Math.round(filterValue), filterUnit); 
+            blurImage.style.filter = filter + '(' + filterValue + filterUnit + ')';
+            showFilterInfo(filter, Math.round(filterValue), filterUnit); 
             }
-    
             function showFilterInfo(filter, value, unit) {
                 filterName.innerText = filter;
                 filterStrength.innerText = value + unit;
-            }
+                }
             blurImage.addEventListener('mousemove', showCoords);
-        
         </script>
     </head>
     <body>
@@ -85,6 +80,5 @@
             <hr>
             &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
         </footer>
-    
     </body>
-    </html>
+</html>

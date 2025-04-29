@@ -19,11 +19,8 @@
                 left: 35%;
                 position: absolute;
                 padding: 10px;
-                border: 6px solid maroon;
-               
-                
+                border: 6px solid maroon;   
             }
-            
         </style>
         <script>
             function showCoords(){
@@ -41,7 +38,6 @@
                 else
                     ctrl = '';
 
-
                 if(this.event.altKey)
                     div.style.backgroundColor = 'Green';
                 else
@@ -52,8 +48,6 @@
                 else
                     alt = '';
 
-
-                    
                 if(this.event.shiftKey)
                     div.style.border = '6px solid yellow';
                 else
@@ -65,7 +59,6 @@
                     shift = '';
 
                 div.innerHTML = '<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px' + ctrl + alt + shift;
-                
             }
         </script>
     </head>
