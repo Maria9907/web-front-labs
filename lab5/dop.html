@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 5</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <style>
+            img {
+                    height: 50%;
+                    width: 50%;
+                    display: block;
+                    margin-left: auto; 
+                    margin-right: auto;
+                    padding: 15px;
+                }
+                div {
+                    color: #000;
+                    text-align: center;
+                    font-family: 'Times New Roman', Times, serif;
+                    font-weight: bold;
+                }
+        </style>
+        <script>
+            function showCoords(event) {
+                let blurImage = document.getElementById('blurImage');
+                let imageWidth = blurImage.offsetWidth;
+                let mouseX = event.offsetX;
+                let filterValue = (mouseX / imageWidth) * 20;
+                let filter = 'blur';  
+                let filterUnit = 'px';
+                
+    
+                if (event.ctrlKey) {
+                    filter = 'grayscale';
+                    filterValue = (mouseX / imageWidth) * 500;
+                    filterUnit = '%';
+
+                } else if (event.altKey) {  
+                    filter = 'contrast';
+                    filterValue = (mouseX / imageWidth) * 500;
+                    filterUnit = '%';
+                } else if (event.shiftKey) { 
+                    filter = 'invert';
+                    filterValue = (mouseX / imageWidth) * 100;
+                    filterUnit = '%';
+                }
+                
+                blurImage.style.filter = filter + '(' + filterValue + filterUnit + ')';
+                showFilterInfo(filter, Math.round(filterValue), filterUnit); 
+            }
+    
+            function showFilterInfo(filter, value, unit) {
+                filterName.innerText = filter;
+                filterStrength.innerText = value + unit;
+            }
+            blurImage.addEventListener('mousemove', showCoords);
+        
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+        <main>
+            <div >
+                <div >
+                    Наведите мышь на картинку: чем правее — тем сильнее эффект.<br>
+                    При наведении будет работать Фильтр blur.<br>
+                    При нажатой клавише Ctrl - фильтр grayscale.<br>
+                    При нажатой клавише Alt - фильтр contrast.<br>
+                    При нажатой клавише Shift - фильтр invert.
+                </div>
+                <img id="blurImage" src="dop.jpg" onmousemove="showCoords(event)" >
+                <div >
+                    Фильтр: <span id="filterName">none</span>(<span id="filterStrength">0</span>)
+                </div>
+            </div>
+            <div id="block" onmousemove="showCoords()"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    
+    </body>
+    </html>
