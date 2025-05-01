@@ -4,12 +4,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Матюшкина Мария Дмитриевна. Расчетно-графическое задание</title>
-        
+        <link rel="stylesheet" href="main1.css">
         
         
         <style>
             body {
-                margin-bottom: 100px;
+                margin-bottom: 70px;
             }
             
             .nav {
@@ -18,9 +18,9 @@
                 left: 50%; /* Центрирование относительно окна */
                 transform: translateX(-50%); /* Точное центрирование */
                 width: 70%; /* Уменьшенная ширина */
-                height: 50px; /* Уменьшенная высота */
+                height: 60px; /* Уменьшенная высота */
                 background-color: rgb(22,103,163);
-                
+                transition: 2s;
                 z-index: 1;
 
             }
@@ -33,7 +33,7 @@
 
             }
             
-            ul {
+            #ul {
                 display: flex; /* Гибкое расположение элементов */
                 justify-content: space-between; /* Равные промежутки между элементами */
                 padding: 0 20px; /* Отступы слева и справа */
@@ -42,13 +42,14 @@
                 align-items: center; /* Вертикальное выравнивание */
             }
             
-            li {
+            .li {
                 list-style: none;
                 flex: 1; /* Равномерное распределение пространства */
                 text-align: center; /* Выравнивание текста по центру */
+                
             }
             
-            a {
+            .a1 {
                 text-decoration: none;
                 color: rgb(255, 255, 255);
                 display: block; /* Ссылка занимает всю область li */
@@ -58,15 +59,95 @@
                 
                 
             }
-            a:hover {
+            .a1:hover {
                 transition: 1s;
                 background-color: rgb(242,112,38);
                 box-shadow: 0 0 20px 	rgb(242,112,38) ;
-                
+            
             }
             .r {
                 font-size: 100px;
             }
+
+            img {
+                width: 140px;
+                height: 90px;
+            }
+            #t {
+              display: inline-block;  
+              vertical-align: top;
+              color: rgb(242,112,38) ;
+              text-align:right;
+              font-size: 35px;
+              
+            }
+            #pf {
+                width: 50%;
+                height: 600px;
+                border-radius: 5px;
+                display: inline-block;
+            }
+            #pf:hover {
+                transition: 2s;
+                width: 60%;
+            }
+            #pf:not(:hover) {
+                transition: 2s;
+            }
+
+            .block {
+                display:inline-block;
+                vertical-align: top;
+                background-color: rgb(22,103,163);
+                border-radius: 10px;
+                width: 30%;
+                color: #ffffff;
+                padding: 15px;
+                
+                margin-left: 90px; }
+            .spisok {
+                display: inline-block;
+                
+                color:#ffffff;
+                background-color: rgb(242,112,38) ;
+                border-radius: 10px;
+                
+                transition: 3s;
+               
+            }
+            .spisok:hover {
+                transition: 2s;
+                box-shadow: 0 0 20px 	rgb(242,112,38) ;
+            }
+            .kor , .kor1 {
+                display: block;
+                background-color: rgb(51, 35, 26);
+                color: #ffffff;
+                border-radius: 5px;
+                text-decoration: none;
+                margin: 5px;
+                padding: 5px;
+                
+            }
+            .kor1 {
+                position: fixed;
+                bottom: 0;
+                
+            }
+            .li1 {
+                background-color:rgb(242,112,38);
+                transition: 0.5s;
+                padding:  5px;
+                
+                font-size: 23px;
+                
+            }
+            .li1:hover {
+                background-color: rgb(39, 81, 118);
+                transition: 1s;
+            }
+           
+            
             </style>
             
            
@@ -74,22 +155,70 @@
 
     <body>
         <header>
-            
+            <p><a   name="top"></a></p>
+            <img src="logo_dek_pole.png" alt="">
+            <h1 id="t">РАСШИРЯЕМ  ГРАНИЦЫ И НЕСЁМ СВЕТ И ТЕПЛО</h1>
+           
             <hr>
         </header>
+        
+        <a  class="kor" href="#top1">Вниз</a>
         <main>
+        
+            <img  id="pf" src="Airbrush-Image-Enhancer.jpg" alt="">
+           <div class="block">
+            <br><a style="color: rgb(242,112,38); " href="https://www.dvec.ru/company/" target="_blank"><b>ПАО «ДЭК»</b> </a>образовано путем слияния региональных энергосистем Дальнего Востока.  
+            Компания ведет свою деятельность на территории семи регионов ДФО: Приморского края, 
+            Хабаровского края, Амурской области, ЕАО, Сахалинской области, Камчатского края, 
+            Республики Саха (Якутия).</br>
+            <br>Является основным Гарантирующим <b>поставщиком электроэнергии</b> на территории <i><b>Приморья, 
+                Хабаровского края, Амурской области, ЕАО, Республики Саха (Якутия)</b></i>.  С 1 января 2025 года территория 
+            Дальнего Востока, ранее относившаяся к неценовой зоне, вошла в состав второй ценовой зоны оптового 
+            рынка электроэнергии и мощности (ОРЭМ). В рамках выполнения агентских функций в интересах 
+            гарантирующих поставщиков осуществляет функции сбыта на территории Камчатского края, 
+            Сахалинской области.</br> 
+           </div>
            
+           
+           <h2>Основными видами деятельности Общества является:</h2>
+           <div class="spisok">
+           <ul>
+            <li class="li1">выполнение функций гарантирующего поставщика;</li>
+            <li class="li1">оказание услуг по регистрации групп точек поставки и получения допуска к торговой системе ОРЭМ в интересах крупных потребителей;</li>
+            <li class="li1" >оказание услуг третьим лицам, в том числе по сбору платежей за отпускаемые товары и оказываемые услуги;</li>
+            <li class="li1" >диагностика, эксплуатация, ремонт, замена и проверка средств измерений и учета электрической и тепловой энергии;</li>
+            <li class="li1">оказание услуг по организации коммерческого учета;</li>
+            <li class="li1" >разработка, организация и проведение энергосберегающих мероприятий;</li>
+            <li class="li1" >инвестиционная деятельность;</li>
+            <li class="li1" >выполнение агентских функций по расчетам за коммунальные услуги на основании агентских договоров с гарантирующими поставщиками и ресурсоснабжающими организациями.</li>
+            <li class="li1">оказание консалтинговых и иных услуг, связанных с реализацией электрической энергии юридическим и физическим лицам.</li>
+       
+            
+
+
+
+
+
+          
+            
+
+           </ul>
             <div class="nav">
-                <ul>
-                    <li><a href="history.html">Главная</a></li>
-                    <li><a href="#">О компании</a></li>
-                    <li><a href="#">Новости</a></li>
-                    <li><a href="#">Курс валют</a></li>
-                    <li><a href="#">Контактные данные</a></li>
+                
+                <ul id="ul">
+                    <li class="li"><a class="a1" href="history.html">О компании</a></li>
+                    <li class="li"><a class="a1" href="#">Новости</a></li>
+                    <li class="li"><a class="a1" href="#">Курс валют</a></li>
+                    <li class="li"><a class="a1" href="#">Контактные данные</a></li>
+                    <li class="li"><a class="a1" href="#">Видео</a></li>
                 </ul>
             </div>
                 
         </main>
-        
+         
     </body>
+    <footer>
+        <a  class="kor1" href="#top">Наверх</a>
+        <p><a   name="top1"></a></p>  
+    </footer>
 </html>
