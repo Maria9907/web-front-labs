@@ -12,3 +12,101 @@ h2 {
     text-align: center;
     color:  rgb(22,103,163);
 }
+.kor , .kor1 {
+    display: block;
+    background-color: rgb(51, 35, 26);
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    
+}
+.kor1 {
+    position: fixed;
+    bottom: 0;
+    
+}
+body {
+    margin-bottom: 70px;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Центрирование относительно окна */
+    transform: translateX(-50%); /* Точное центрирование */
+    width: 70%; /* Уменьшенная ширина */
+    height: 60px; /* Уменьшенная высота */
+    background-color: rgb(22,103,163);
+    transition: 2s;
+    z-index: 1;
+
+}
+.nav:hover {
+    transition: 1s;
+    width: 75%;
+    height: 60px;
+    box-shadow: 0 0 20px  rgb(22,103,163);
+    border-radius: 5px;
+
+}
+
+#ul {
+    display: flex; /* Гибкое расположение элементов */
+    justify-content: space-between; /* Равные промежутки между элементами */
+    padding: 0 20px; /* Отступы слева и справа */
+    margin: 0;
+    height: 100%; /* Занимает всю высоту панели */
+    align-items: center; /* Вертикальное выравнивание */
+}
+
+.li {
+    list-style: none;
+    flex: 1; /* Равномерное распределение пространства */
+    text-align: center; /* Выравнивание текста по центру */
+    
+}
+
+.a1 {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block; /* Ссылка занимает всю область li */
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    
+}
+.a1:hover {
+    transition: 1s;
+    background-color: rgb(242,112,38);
+    box-shadow: 0 0 20px 	rgb(242,112,38) ;
+
+}
+.r {
+    font-size: 100px;
+}
+
+img {
+    width: 140px;
+    height: 90px;
+}
+#t {
+  display: inline-block;  
+  vertical-align: top;
+  color: rgb(242,112,38) ;
+  text-align:right;
+  font-size: 35px;
+  
+}
+.link {
+    color:  rgb(22,103,163);
+  
+}
+.link:hover {
+    transition: 0.3s;
+    color: rgb(88, 132, 199) ;
+    
+
+}

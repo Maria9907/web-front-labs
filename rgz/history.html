@@ -48,9 +48,7 @@
                 list-style: none;
                 flex: 1; /* Равномерное распределение пространства */
                 text-align: center; /* Выравнивание текста по центру */
-                
             }
-            
             .a1 {
                 text-decoration: none;
                 color: rgb(255, 255, 255);
@@ -58,14 +56,11 @@
                 width: 100%;
                 padding-top: 10px;
                 padding-bottom: 10px;
-                
-                
             }
             .a1:hover {
                 transition: 1s;
                 background-color: rgb(242,112,38);
                 box-shadow: 0 0 20px 	rgb(242,112,38) ;
-            
             }
             .r {
                 font-size: 100px;
@@ -88,39 +83,33 @@
                 height: 600px;
                 border-radius: 5px;
                 display: inline-block;
+                transition: 2s;
             }
             #pf:hover {
                 transition: 2s;
                 width: 60%;
             }
-            #pf:not(:hover) {
-                transition: 2s;
-            }
-
             .block {
                 display:inline-block;
                 vertical-align: top;
-                background-color: rgb(22,103,163);
+                height: 565px;
                 border-radius: 10px;
+                margin-left: 80px;
                 width: 30%;
-                color: #ffffff;
+                color: #000000;
                 padding: 15px;
+                border: 2px solid  rgb(22,103,163) ;
+                box-shadow: 0 0 20px  rgb(22,103,163) ;
                 
-                margin-left: 90px; }
+            }
+               
+                
             .spisok {
                 display: inline-block;
-                
-                color:#ffffff;
-                background-color: rgb(242,112,38) ;
                 border-radius: 10px;
-                
-                transition: 3s;
-               
+                box-shadow: 0 0 20px  rgb(22,103,163) ;
             }
-            .spisok:hover {
-                transition: 2s;
-                box-shadow: 0 0 20px 	rgb(242,112,38) ;
-            }
+            
             .kor , .kor1 {
                 display: block;
                 background-color: rgb(51, 35, 26);
@@ -137,52 +126,49 @@
                 
             }
             .li1 {
-                background-color:rgb(242,112,38);
-                transition: 0.5s;
+                transition: 1s;
                 padding:  5px;
-                
                 font-size: 23px;
                 
             }
             .li1:hover {
-                background-color: rgb(39, 81, 118);
+                background-color: rgb(242,112,38);
+                box-shadow: 0 0 15px  rgb(242,112,38)  ;
                 transition: 1s;
             }
             .B {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 столбца, каждый занимает 1 долю доступного пространства */
-    padding-left: 100px; 
-    padding-right: 100px; 
-}
-.b {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr); /* 3 столбца, каждый занимает 1 долю доступного пространства */
+                padding-left: 100px; 
+                padding-right: 100px; 
+            }
+            .b {
 
-display: inline-block;
-text-align: center;
-margin: 10px;
+                display: inline-block;
+                text-align: center;
+                margin: 10px;
 
-padding: 10px;
-border-radius: 5px;
-overflow: hidden; 
-transition: 1s;
-border: 2px solid transparent;
+                padding: 10px;
+                border-radius: 5px;
+                overflow: hidden; 
+                transition: 1s;
+                border: 2px solid transparent;
 
-}
-.b:hover {
-    border: 2px solid rgb(242,112,38) ;
-    transition: 0.3s;
-    box-shadow: 0 0 20px 	rgb(242,112,38) ;
+            }
+            .b:hover {
+                border: 2px solid rgb(242,112,38) ;
+                transition: 0.3s;
+                box-shadow: 0 0 20px 	rgb(242,112,38) ;
 
-}
-.B1 {
-text-align: center;
-padding-top: 17px;
-
-color:rgb(242,112,38) ;
-
-font-size: 24px;
-border-bottom: 3px double rgb(242,112,38) ;
-margin-bottom: 10px;
-}
+            }
+            .B1 {
+                text-align: center;
+                padding-top: 17px;
+                color:rgb(242,112,38) ;
+                font-size: 24px;
+                border-bottom: 3px double rgb(242,112,38) ;
+                margin-bottom: 10px;
+            }
             
             </style>
             
@@ -213,6 +199,10 @@ margin-bottom: 10px;
             рынка электроэнергии и мощности (ОРЭМ). В рамках выполнения агентских функций в интересах 
             гарантирующих поставщиков осуществляет функции сбыта на территории Камчатского края, 
             Сахалинской области.</br> 
+            <br>Группа ДЭК представлена материнской компанией ПАО «ДЭК», профильной дочерней компанией Акционерное 
+            общество «Дальневосточная распределительная сетевая компания» (АО «ДРСК»), ремонтно-сервисными дочерними 
+            обществами - Акционерное общество «Хабаровская энерготехнологическая компания» (АО «ХЭТК»), Акционерное 
+            общество «Хабаровская ремонтно-монтажная компания» (АО «ХРМК»), Акционерное общество «РусГидро Логистика» (АО «РГ Логистика»).</br>
            </div>
            
            
@@ -318,7 +308,7 @@ margin-bottom: 10px;
                 
                 <ul id="ul">
                     <li class="li"><a class="a1" href="history.html">О компании</a></li>
-                    <li class="li"><a class="a1" href="#">Новости</a></li>
+                    <li class="li"><a class="a1" href="new.html">Новости</a></li>
                     <li class="li"><a class="a1" href="#">Курс валют</a></li>
                     <li class="li"><a class="a1" href="#">Контактные данные</a></li>
                     <li class="li"><a class="a1" href="#">Видео</a></li>
