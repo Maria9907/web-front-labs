@@ -27,7 +27,25 @@
                 <div><b>Дата и время для китайской локали:</b> ${cnDate}</div>
             `;
             }
+            function changeColors() {
+                    const header = document.getElementsByTagName('header')[0];
+                    const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                    header.style.color = rgb;
+            }
+            let timerNum;
+            function startChangeColors(){
+                changeColors();
+                timerNum = setInterval(changeColors,700);
+                document.getElementById('start-btn').disabled = true;
+                document.getElementById('stop-btn').disabled = false;
+            }
+            function stopChangeColors(){
+                clearInterval(timerNum);
+                document.getElementById('start-btn').disabled = false;
+                document.getElementById('stop-btn').disabled = true;
+            }
         </script>
+       
         <style>
             div {
                 margin: 5px;
@@ -37,8 +55,6 @@
             #current-date {
                 position: relative;
                 margin-top: 20px;
-                
-               
             }
         </style>
     </head>
@@ -49,7 +65,11 @@
         </header>
         <main>
             <div id="current-date"></div>
-            
+            <div>
+                <button onclick="startChangeColors()"  id="start-btn">Старт</button>
+                <button onclick="stopChangeColors()" disabled id="stop-btn">Стоп</button>
+               
+            </div>
         </main>
         </main>
         <footer>
