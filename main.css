@@ -1,12 +1,13 @@
 body {
-    background-color: papayawhip;
+    background-color: rgba(127, 41, 41, 0.692);
     color: maroon;
     font-family: Arial;
     margin: 0px;
 }
 
 main {
-    background-color: rgba(127, 41, 41, 0.692);
+   
+   
     color: rgb(245, 244, 244);
     font-family: Arial;
     margin: 0px;
