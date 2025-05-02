@@ -1,0 +1,60 @@
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <script>
+            function showDate(){
+            let out = document.getElementById('current-date');
+
+            let ruDate = new Date().toLocaleString('ru-RU');
+            let aeDate = new Date().toLocaleString('ar-AE'); 
+            let egDate = new Date().toLocaleString('ar-EG'); 
+            let grDate = new Date().toLocaleString('el-GR'); 
+            let pkDate = new Date().toLocaleString('en-PK'); 
+            let cnDate = new Date().toLocaleString('zh-CN'); 
+
+            out.innerHTML = `
+                <div><b>Дата и время для русской локали:</b> ${ruDate}</div>
+                <div><b>Дата и время для локали ЮАР:</b> ${aeDate}</div>
+                <div><b>Дата и время для локали Египта:</b> ${egDate}</div>
+                <div><b>Дата и время для греческой локали:</b> ${grDate}</div>
+                <div><b>Дата и время для пакистанской локали:</b> ${pkDate}</div>
+                <div><b>Дата и время для китайской локали:</b> ${cnDate}</div>
+            `;
+            }
+        </script>
+        <style>
+            div {
+                margin: 5px;
+                border: 2px solid maroon;
+                padding: 6px;
+            }
+            #current-date {
+                position: relative;
+                margin-top: 20px;
+                
+               
+            }
+        </style>
+    </head>
+    <body onload="showDate()">
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+        </header>
+        <main>
+            <div id="current-date"></div>
+            
+        </main>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
