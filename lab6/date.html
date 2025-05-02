@@ -32,6 +32,18 @@
                     const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
                     header.style.color = rgb;
             }
+            let DateNum;
+            function startChangeDate(){
+                showDate();
+                DateNum = setInterval(showDate,1000);
+                document.getElementById('startDate-btn').disabled = true;
+                document.getElementById('stopDate-btn').disabled = false;
+            }
+            function stopChangeDate(){
+                clearInterval(DateNum);
+                document.getElementById('startDate-btn').disabled = false;
+                document.getElementById('stopDate-btn').disabled = true;
+            }
             let timerNum;
             function startChangeColors(){
                 changeColors();
@@ -49,13 +61,16 @@
         <style>
             div {
                 margin: 5px;
-                border: 2px solid maroon;
+                border: 2px solid rgb(17, 79, 79);
                 padding: 6px;
+                
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
             #current-date {
                 position: relative;
                 margin-top: 20px;
             }
+           
         </style>
     </head>
     <body onload="showDate()">
@@ -68,7 +83,8 @@
             <div>
                 <button onclick="startChangeColors()"  id="start-btn">Старт</button>
                 <button onclick="stopChangeColors()" disabled id="stop-btn">Стоп</button>
-               
+                <button onclick="startChangeDate()"   id="startDate-btn">Обновить время</button>
+                <button onclick="stopChangeDate()"  disabled id="stopDate-btn">Остановить обновление времени</button>
             </div>
         </main>
         </main>
