@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <script src="books.js"></script>
+        <script> 
+            function showBooks() {
+                const bookList = document.getElementById('bookList');
+                
+                    for(let i = 0; i < books.length; i++) {
+                    const book = books[i];
+                    let bookClass = 'book';
+
+                    if (book.bestseller) {
+                        bookClass += ' bestseller';
+                    }
+                    if (!book.inStock) {
+                        bookClass += ' unavailable';
+                    }
+                   
+                     bookList.innerHTML += `
+                        <div class="${bookClass}">
+                            <b>${ books[i].author}.</b>
+                            <i>${ books[i].name}</i>
+                            &mdash; ${ books[i].publicationYear}
+                            &mdash; Цена: ${books[i].price} руб.
+                            ${book.bestseller ?  '<sup style="background-color: maroon; padding: 3px; border-radius: 8px; color:#ddd">Хит продаж!</sup>':''}
+                            ${book.inStock ? '' : '<br><span >Нет в наличии</span>'}
+
+                            
+                           
+                        </div>
+                    `;
+                    
+
+                }
+
+            }
+        </script>
+        <style>
+            h1 {
+                text-align: center;
+                box-shadow: 0 0 10px #ddd;
+            }
+             .book {
+            border: 1px solid maroon;
+            box-shadow: 0 0 10px maroon;
+            margin-bottom: 10px;
+            padding: 10px;
+            color: #000;
+        }
+
+        .bestseller {
+            color: #ffefd5;
+           
+        }
+
+        .unavailable {
+            color: #999;}
+        </style>
+    </head>
+    <body onload="showBooks()">
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+        </header>
+        <main>
+           <h1>Список книг</h1>
+           <div id="bookList">
+           </div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
