@@ -10,7 +10,8 @@ footer {
 h2 {
     font-size: 32px;
     text-align: center;
-    color:  rgb(22,103,163);
+    color:  rgb(51, 35, 26);
+    
 }
 .kor , .kor1 {
     display: block;
@@ -52,6 +53,7 @@ body {
 
 }
 
+
 #ul {
     display: flex; /* Гибкое расположение элементов */
     justify-content: space-between; /* Равные промежутки между элементами */
@@ -84,6 +86,7 @@ body {
     box-shadow: 0 0 20px 	rgb(242,112,38) ;
 
 }
+
 .r {
     font-size: 100px;
 }
