@@ -8,7 +8,6 @@
         <link rel="shortcut icon" href="../index.html" type="image/x-icon">
         <link rel=" icon" href="favicon-16x16.png">
         <link rel=" icon" href="favicon-32x32.png">
-        
         <style>
             main {
                 margin-left: 105px;
@@ -16,22 +15,21 @@
             }
            #diag {
             width: 1200px;
-            
-             border: 1px solid  rgb(22,103,163);
-             box-shadow: 0 0 20px 	rgb(22,103,163);
-             border-radius: 10px;
-             margin: 20px;
-             padding: 10px;
+            border: 1px solid  rgb(22,103,163);
+            box-shadow: 0 0 20px 	rgb(22,103,163);
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
 
            }
            #c {
             border: 1px solid  rgb(22,103,163);
-             box-shadow: 0 0 20px 	rgb(22,103,163);
-             border-radius: 10px;
-             padding: 10px;
-             text-align: center;
-             margin: 20px;
-             width: 1200px;
+            box-shadow: 0 0 20px 	rgb(22,103,163);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: 20px;
+            width: 1200px;
            }
            button {
             border-radius: 10px;
@@ -53,8 +51,6 @@
              font-weight: bolder;
            }
         </style>
-        
-            
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
             let rate, chart;
@@ -84,7 +80,6 @@
                         });
                     } catch(e) {}
                 }
-                
                 chart = new Chart(document.getElementById('chart'), {
                     type: 'bar',
                     data: {
@@ -101,7 +96,6 @@
                     
                 });
             }
-            
             function convert(toCzk) {
                 const rub = document.getElementById('rub-input');
                 const czk = document.getElementById('czk-input');
@@ -112,40 +106,35 @@
                     rub.value = (czk.value * rate).toFixed(2);
                 }
             }
-            
-            
             </script>
     </head>
-
     <body onload="loadData()">
         <header>
             <p><a   name="top"></a></p>
             <img src="logo_dek_pole.png" alt="">
             <h1 id="t">РАСШИРЯЕМ  ГРАНИЦЫ И НЕСЁМ СВЕТ И ТЕПЛО</h1>
-           
             <hr>
         </header>
-        
         <a  class="kor" href="#top1">Вниз</a>
         <main>
             <h1 style="text-align: center;">Конвертер валют (CZK ⇄ RUB)</h1>
             <div id="c">
-            <div id="current-rate"></div>
-            <div id="calc ">
-                <input type="number" id="rub-input" placeholder="RUB">
-                <button  onclick="convert(true)">→ CZK</button>
-                <button onclick="convert(false)">← RUB</button>
-                <input type="number" id="czk-input" placeholder="CZK">
-            </div></div>
-        
+                <div id="current-rate"></div>
+                <div id="calc ">
+                    <input type="number" id="rub-input" placeholder="RUB">
+                    <button  onclick="convert(true)">→ CZK</button>
+                    <button onclick="convert(false)">← RUB</button>
+                    <input type="number" id="czk-input" placeholder="CZK">
+                </div>
+            </div>
+    
             <div id="diag">
                 <canvas id="chart"></canvas>
             </div>
             <div id="info"></div>
-        
+
 
             <div class="nav">
-                
                 <ul id="ul">
                     <li class="li"><a class="a1" href="history.html">О компании</a></li>
                     <li class="li"><a class="a1" href="new.html">Новости</a></li>
@@ -154,9 +143,7 @@
                     <li class="li"><a class="a1" href="video.html">Видео</a></li>
                 </ul>
             </div>
-                
         </main>
-         
     </body>
     <footer>
         <a  class="kor1" href="#top">Наверх</a>
