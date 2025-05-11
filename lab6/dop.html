@@ -16,40 +16,40 @@
                 text-align: center;
             }
             .chart {
-                background-color: rgb(75, 82, 88); /* Устанавливает темно-серый фон для области диаграммы */
+                background-color: rgb(75, 82, 88); 
                 box-shadow: 0 0 20px maroon;
-                position: relative; /* Позволяет позиционировать элементы внутри относительно этого контейнера */
-                height: 490px; /* Высота области диаграммы */
-                margin-top: 15px; /* Отступ сверху */
-                width: 100%; /* Ширина во всю доступную область */
-                display: flex; /* Использует flexbox для выравнивания элементов */
-                align-items: flex-end; /* Выравнивает элементы по нижнему краю контейнера */
+                position: relative; 
+                height: 490px; 
+                margin-top: 15px; 
+                width: 100%; 
+                display: flex; 
+                align-items: flex-end;
             }
             .bar {
-                width: 45px; /* Ширина каждого столбца диаграммы */
-                margin: 5px; /* Отступы слева и справа от столбцов */
-                display: flex; /* Использует flexbox */
-                flex-direction: column; /* Размещает элементы внутри столбца вертикально */
-                justify-content: flex-end; /* Выравнивает содержимое столбца по нижнему краю */
-                position: relative; /* Позволяет абсолютно позиционировать элементы внутри */
+                width: 45px; 
+                margin: 5px; 
+                display: flex; 
+                flex-direction: column;
+                justify-content: flex-end; 
+                position: relative; 
             }
             .max-temp {
-                background-color: lightblue; /* Светло-голубой фон для максимальной температуры */
-                width: 100%; /* Занимает всю ширину столбца */
-                position: absolute; /* Абсолютное позиционирование внутри столбца */
-                top: 0; /* Прижимается к верху столбца */
+                background-color: lightblue;
+                width: 100%;
+                position: absolute; 
+                top: 0; 
             }
             .min-temp {
-                background-color: darkblue; /* Темно-синий фон для минимальной температуры */
-                width: 100%; /* Занимает всю ширину столбца */
-                position: absolute; /* Абсолютное позиционирование внутри столбца */
-                bottom: 0; /* Прижимается к низу столбца */
+                background-color: darkblue; 
+                width: 100%; 
+                position: absolute; 
+                bottom: 0; 
             }
             .temp-label {
-                position: absolute; /* Абсолютное позиционирование меток температуры */
-                color: #ffffff; /* Белый цвет текста */
-                font-size: 12px; /* Размер шрифта */
-                font-weight: bold; /* Жирный шрифт */
+                position: absolute;
+                color: #ffffff; 
+                font-size: 12px; 
+                font-weight: bold; 
                 
             }
             .max-temp .temp-label {
@@ -65,69 +65,68 @@
                 background-color: #ff4444; 
             }
             #dayInput {
-                margin: 20px 0; /* Отступы сверху и снизу */
-                padding: 8px; /* Внутренние отступы */
-                width: 200px; /* Ширина поля ввода */
+                margin: 20px 0;
+                padding: 8px; 
+                width: 200px; 
             }
             #selectedDayInfo {
-                margin-bottom: 20px; /* Отступ снизу */
-                font-weight: bold; /* Жирный шрифт */
-                color: #333; /* Темно-серый цвет текста */
+                margin-bottom: 20px; 
+                font-weight: bold; 
+                color: #333; 
                 display: inline-block;
                 margin-left: 15px;
             }
         </style>
         <script>
-            let data = []; // Массив для хранения данных о температуре
+            let data = []; 
             
             function showDiagram() {
-                data = []; // Очищаем массив данных перед генерацией новых
-                for (let i = 0; i < 30; i++) { // Генерируем данные для 30 дней
-                    let minTemp = Math.floor(Math.random() * 20) + 10; // Случайная минимальная температура от 10 до 29
-                    let maxTemp = Math.floor(Math.random() * 10) + minTemp; // Случайная максимальная температура, минимум на 10 градусов больше минимальной
-                    data.push({ min: minTemp, max: maxTemp }); // Добавляем объект с минимальной и максимальной температурой в массив
+                data = []; 
+                for (let i = 0; i < 30; i++) { 
+                    let minTemp = Math.floor(Math.random() * 20) + 10; 
+                    let maxTemp = Math.floor(Math.random() * 10) + minTemp; 
+                    data.push({ min: minTemp, max: maxTemp }); 
                 }
-                const bars = document.getElementsByClassName('bar'); // Получаем все элементы с классом "bar"
-                const diagHeight = document.getElementById('chartContainer').clientHeight; // Получаем высоту области диаграммы
+                const bars = document.getElementsByClassName('bar'); 
+                const diagHeight = document.getElementById('chartContainer').clientHeight; 
                 
-                var maxValues = data.map(function(d) { // Для каждого элемента массива data
-                    return d.max; // Берем его максимальное значение
+                var maxValues = data.map(function(d) { 
+                    return d.max; 
                 });
-                let maxData = Math.max.apply(null, maxValues); // Находим максимальное значение из всех максимальных температур
-                const k = diagHeight / maxData * 0.9; // Вычисляем коэффициент масштабирования (умножаем на 0.9, чтобы оставить небольшой запас)
-                for (let i = 0; i < bars.length; i++) { // Для каждого столбца диаграммы
-                    const bar = bars[i]; // Получаем текущий столбец
-                    const minTemp = data[i].min; // Получаем минимальную температуру для этого дня
-                    const maxTemp = data[i].max; // Получаем максимальную температуру для этого дня
-                    const barHeightMin = k * minTemp; // Вычисляем высоту столбца для минимальной температуры
-                    const barHeightMax = k * (maxTemp - minTemp); // Вычисляем высоту столбца для разницы между максимальной и минимальной температурой
-                    bar.style.height = k * maxTemp + 'px'; // Устанавливаем общую высоту столбца (максимальная температура)
-                    bar.innerHTML =  // Заполняем столбец HTML-кодом
-                    '<div class="max-temp" style="height: ' + barHeightMax + 'px">' + // Создаем div для максимальной температуры
-                        '<span class="temp-label">' + maxTemp + '°C</span>' + // Добавляем метку с максимальной температурой
-                    '</div>' +
-                    '<div class="min-temp" style="height: ' + barHeightMin + 'px">' + // Создаем div для минимальной температуры
-                        '<span class="temp-label">' + minTemp + '°C</span>' + // Добавляем метку с минимальной температурой
+                let maxData = Math.max.apply(null, maxValues);
+                const k = diagHeight / maxData * 0.9; 
+                for (let i = 0; i < bars.length; i++) { 
+                    const bar = bars[i]; 
+                    const minTemp = data[i].min; 
+                    const maxTemp = data[i].max; 
+                    const barHeightMin = k * minTemp; 
+                    const barHeightMax = k * (maxTemp - minTemp); 
+                    bar.style.height = k * maxTemp + 'px'; 
+                    bar.innerHTML =  
+                    '<div class="max-temp" style="height: ' + barHeightMax + 'px">' + 
+                        '<span class="temp-label">' + maxTemp + '°C</span>' + 
+                    '<div class="min-temp" style="height: ' + barHeightMin + 'px">' + 
+                        '<span class="temp-label">' + minTemp + '°C</span>' + 
                     '</div>';
                     }
             }
             // Обработчик ввода номера дня
                 function handleDayInput() {
-                const day = parseInt(document.getElementById('dayInput').value); // Получаем введенный номер дня
-                const infoDiv = document.getElementById('selectedDayInfo'); // Получаем элемент для отображения информации о выбранном дне
-                if (day >= 1 && day <= 30) { // Проверяем, что номер дня в пределах допустимого
-                    const bars = document.getElementsByClassName('bar'); // Получаем все столбцы
-                    Array.from(bars).forEach(function(bar) { // Для каждого столбца
-                        bar.classList.remove('highlight'); // Убираем класс "highlight" (снимаем выделение)
+                const day = parseInt(document.getElementById('dayInput').value); 
+                const infoDiv = document.getElementById('selectedDayInfo'); 
+                if (day >= 1 && day <= 30) { 
+                    const bars = document.getElementsByClassName('bar'); 
+                    Array.from(bars).forEach(function(bar) {
+                        bar.classList.remove('highlight'); 
                     });
-                    const selectedBar = bars[day - 1]; // Получаем столбец, соответствующий введенному номеру дня
-                    selectedBar.classList.add('highlight'); // Добавляем класс "highlight" (выделяем столбец)
-                    const dayData = data[day - 1]; // Получаем данные о температуре для этого дня
-                    infoDiv.textContent = 'День ' + day + ': Мин ' + dayData.min + '°C, Макс ' + dayData.max + '°C'; // Выводим информацию о температуре
-                } else { // Если номер дня неверный
-                    infoDiv.textContent = ''; // Очищаем информацию
-                    Array.from(bars).forEach(function(bar) { // Для каждого столбца
-                        bar.classList.remove('highlight'); // Убираем выделение
+                    const selectedBar = bars[day - 1]; 
+                    selectedBar.classList.add('highlight'); 
+                    const dayData = data[day - 1]; 
+                    infoDiv.textContent = 'День ' + day + ': Мин ' + dayData.min + '°C, Макс ' + dayData.max + '°C';
+                } else { 
+                    infoDiv.textContent = ''; 
+                    Array.from(bars).forEach(function(bar) { 
+                        bar.classList.remove('highlight'); 
                     });
                 }
             }

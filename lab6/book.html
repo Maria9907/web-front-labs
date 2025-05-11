@@ -12,7 +12,6 @@
         <script> 
             function showBooks() {
                 const bookList = document.getElementById('bookList');
-                
                     for(let i = 0; i < books.length; i++) {
                     const book = books[i];
                     let bookClass = 'book';
@@ -23,8 +22,7 @@
                     if (!book.inStock) {
                         bookClass += ' unavailable';
                     }
-                   
-                     bookList.innerHTML += `
+                    bookList.innerHTML += `
                         <div class="${bookClass}">
                             <b>${ books[i].author}.</b>
                             <i>${ books[i].name}</i>
@@ -32,15 +30,9 @@
                             &mdash; Цена: ${books[i].price} руб.
                             ${book.bestseller ?  '<sup style="background-color: maroon; padding: 3px; border-radius: 8px; color:#ddd">Хит продаж!</sup>':''}
                             ${book.inStock ? '' : '<br><span >Нет в наличии</span>'}
-
-                            
-                           
                         </div>
                     `;
-                    
-
                 }
-
             }
         </script>
         <style>
@@ -48,21 +40,18 @@
                 text-align: center;
                 box-shadow: 0 0 10px #ddd;
             }
-             .book {
+            .book {
             border: 1px solid maroon;
             box-shadow: 0 0 10px maroon;
             margin-bottom: 10px;
             padding: 10px;
             color: #000;
-        }
-
-        .bestseller {
+            }
+            .bestseller {
             color: #ffefd5;
-           
-        }
-
-        .unavailable {
-            color: #999;}
+            }
+            .unavailable {
+                color: #999;}
         </style>
     </head>
     <body onload="showBooks()">
@@ -72,8 +61,7 @@
         </header>
         <main>
            <h1>Список книг</h1>
-           <div id="bookList">
-           </div>
+           <div id="bookList"></div>
         </main>
         <footer>
             <hr>

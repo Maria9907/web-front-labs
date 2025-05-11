@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 6</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <style>
+            h1 {
+                margin: 0;
+                color:#ffffff;
+                box-shadow: 0 0 20px maroon;
+                text-align: center;
+            }
+            .chart {
+                background-color: rgb(75, 82, 88); /* Устанавливает темно-серый фон для области диаграммы */
+                box-shadow: 0 0 20px maroon;
+                position: relative; /* Позволяет позиционировать элементы внутри относительно этого контейнера */
+                height: 490px; /* Высота области диаграммы */
+                margin-top: 15px; /* Отступ сверху */
+                width: 100%; /* Ширина во всю доступную область */
+                display: flex; /* Использует flexbox для выравнивания элементов */
+                align-items: flex-end; /* Выравнивает элементы по нижнему краю контейнера */
+            }
+            .bar {
+                width: 45px; /* Ширина каждого столбца диаграммы */
+                margin: 5px; /* Отступы слева и справа от столбцов */
+                display: flex; /* Использует flexbox */
+                flex-direction: column; /* Размещает элементы внутри столбца вертикально */
+                justify-content: flex-end; /* Выравнивает содержимое столбца по нижнему краю */
+                position: relative; /* Позволяет абсолютно позиционировать элементы внутри */
+            }
+            .max-temp {
+                background-color: lightblue; /* Светло-голубой фон для максимальной температуры */
+                width: 100%; /* Занимает всю ширину столбца */
+                position: absolute; /* Абсолютное позиционирование внутри столбца */
+                top: 0; /* Прижимается к верху столбца */
+            }
+            .min-temp {
+                background-color: darkblue; /* Темно-синий фон для минимальной температуры */
+                width: 100%; /* Занимает всю ширину столбца */
+                position: absolute; /* Абсолютное позиционирование внутри столбца */
+                bottom: 0; /* Прижимается к низу столбца */
+            }
+            .temp-label {
+                position: absolute; /* Абсолютное позиционирование меток температуры */
+                color: #ffffff; /* Белый цвет текста */
+                font-size: 12px; /* Размер шрифта */
+                font-weight: bold; /* Жирный шрифт */
+                
+            }
+            .max-temp .temp-label {
+                top: -20px;
+            }
+            .min-temp .temp-label {
+                bottom: 80%;
+            }
+            .bar.highlight .max-temp {
+                background-color: #ff6666; 
+            }
+            .bar.highlight .min-temp {
+                background-color: #ff4444; 
+            }
+            #dayInput {
+                margin: 20px 0; /* Отступы сверху и снизу */
+                padding: 8px; /* Внутренние отступы */
+                width: 200px; /* Ширина поля ввода */
+            }
+            #selectedDayInfo {
+                margin-bottom: 20px; /* Отступ снизу */
+                font-weight: bold; /* Жирный шрифт */
+                color: #333; /* Темно-серый цвет текста */
+                display: inline-block;
+                margin-left: 15px;
+            }
+        </style>
+        <script>
+            let data = []; // Массив для хранения данных о температуре
+            
+            function showDiagram() {
+                data = []; // Очищаем массив данных перед генерацией новых
+                for (let i = 0; i < 30; i++) { // Генерируем данные для 30 дней
+                    let minTemp = Math.floor(Math.random() * 20) + 10; // Случайная минимальная температура от 10 до 29
+                    let maxTemp = Math.floor(Math.random() * 10) + minTemp; // Случайная максимальная температура, минимум на 10 градусов больше минимальной
+                    data.push({ min: minTemp, max: maxTemp }); // Добавляем объект с минимальной и максимальной температурой в массив
+                }
+                const bars = document.getElementsByClassName('bar'); // Получаем все элементы с классом "bar"
+                const diagHeight = document.getElementById('chartContainer').clientHeight; // Получаем высоту области диаграммы
+                
+                var maxValues = data.map(function(d) { // Для каждого элемента массива data
+                    return d.max; // Берем его максимальное значение
+                });
+                let maxData = Math.max.apply(null, maxValues); // Находим максимальное значение из всех максимальных температур
+                const k = diagHeight / maxData * 0.9; // Вычисляем коэффициент масштабирования (умножаем на 0.9, чтобы оставить небольшой запас)
+                for (let i = 0; i < bars.length; i++) { // Для каждого столбца диаграммы
+                    const bar = bars[i]; // Получаем текущий столбец
+                    const minTemp = data[i].min; // Получаем минимальную температуру для этого дня
+                    const maxTemp = data[i].max; // Получаем максимальную температуру для этого дня
+                    const barHeightMin = k * minTemp; // Вычисляем высоту столбца для минимальной температуры
+                    const barHeightMax = k * (maxTemp - minTemp); // Вычисляем высоту столбца для разницы между максимальной и минимальной температурой
+                    bar.style.height = k * maxTemp + 'px'; // Устанавливаем общую высоту столбца (максимальная температура)
+                    bar.innerHTML =  // Заполняем столбец HTML-кодом
+                    '<div class="max-temp" style="height: ' + barHeightMax + 'px">' + // Создаем div для максимальной температуры
+                        '<span class="temp-label">' + maxTemp + '°C</span>' + // Добавляем метку с максимальной температурой
+                    '</div>' +
+                    '<div class="min-temp" style="height: ' + barHeightMin + 'px">' + // Создаем div для минимальной температуры
+                        '<span class="temp-label">' + minTemp + '°C</span>' + // Добавляем метку с минимальной температурой
+                    '</div>';
+                    }
+            }
+            // Обработчик ввода номера дня
+                function handleDayInput() {
+                const day = parseInt(document.getElementById('dayInput').value); // Получаем введенный номер дня
+                const infoDiv = document.getElementById('selectedDayInfo'); // Получаем элемент для отображения информации о выбранном дне
+                if (day >= 1 && day <= 30) { // Проверяем, что номер дня в пределах допустимого
+                    const bars = document.getElementsByClassName('bar'); // Получаем все столбцы
+                    Array.from(bars).forEach(function(bar) { // Для каждого столбца
+                        bar.classList.remove('highlight'); // Убираем класс "highlight" (снимаем выделение)
+                    });
+                    const selectedBar = bars[day - 1]; // Получаем столбец, соответствующий введенному номеру дня
+                    selectedBar.classList.add('highlight'); // Добавляем класс "highlight" (выделяем столбец)
+                    const dayData = data[day - 1]; // Получаем данные о температуре для этого дня
+                    infoDiv.textContent = 'День ' + day + ': Мин ' + dayData.min + '°C, Макс ' + dayData.max + '°C'; // Выводим информацию о температуре
+                } else { // Если номер дня неверный
+                    infoDiv.textContent = ''; // Очищаем информацию
+                    Array.from(bars).forEach(function(bar) { // Для каждого столбца
+                        bar.classList.remove('highlight'); // Убираем выделение
+                    });
+                }
+            }
+        </script>
+    </head>
+    <body onload="showDiagram()">
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+            <hr>
+        </header>
+        <main>
+            <h1>Температурная диаграмма за месяц</h1>
+        
+            <div class="chart" id="chartContainer">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+    
+            <div>
+                <input type="number" id="dayInput" min="1" max="30" 
+                       placeholder="Введите номер дня (1-30)"
+                       oninput="handleDayInput()">
+                <div id="selectedDayInfo"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>

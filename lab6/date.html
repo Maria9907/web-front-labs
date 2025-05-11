@@ -28,9 +28,9 @@
             `;
             }
             function changeColors() {
-                    const header = document.getElementsByTagName('header')[0];
-                    const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
-                    header.style.color = rgb;
+                const header = document.getElementsByTagName('header')[0];
+                const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+                header.style.color = rgb;
             }
             let DateNum;
             function startChangeDate(){
@@ -60,17 +60,16 @@
        
         <style>
             div {
-                margin: 5px;
-                border: 2px solid rgb(17, 79, 79);
+                margin: 15px;
+                border: 1px solid maroon;
+                box-shadow: 0 0 10px rgb(255, 255, 255);
                 padding: 6px;
-                
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             }
             #current-date {
                 position: relative;
                 margin-top: 20px;
             }
-           
         </style>
     </head>
     <body onload="showDate()">
@@ -86,7 +85,6 @@
                 <button onclick="startChangeDate()"   id="startDate-btn">Обновить время</button>
                 <button onclick="stopChangeDate()"  disabled id="stopDate-btn">Остановить обновление времени</button>
             </div>
-        </main>
         </main>
         <footer>
             <hr>
