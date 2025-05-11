@@ -29,24 +29,24 @@
                 width: 45px; 
                 margin: 5px; 
                 display: flex; 
-                flex-direction: column;
+                flex-direction: column; 
                 justify-content: flex-end; 
                 position: relative; 
             }
             .max-temp {
-                background-color: lightblue;
-                width: 100%;
+                background-color: lightblue; 
+                width: 100%; 
                 position: absolute; 
                 top: 0; 
             }
             .min-temp {
                 background-color: darkblue; 
-                width: 100%; 
+                width: 100%;
                 position: absolute; 
-                bottom: 0; 
+                bottom: 0;
             }
             .temp-label {
-                position: absolute;
+                position: absolute; 
                 color: #ffffff; 
                 font-size: 12px; 
                 font-weight: bold; 
@@ -66,7 +66,7 @@
             }
             #dayInput {
                 margin: 20px 0;
-                padding: 8px; 
+                padding: 8px;
                 width: 200px; 
             }
             #selectedDayInfo {
@@ -93,10 +93,10 @@
                 var maxValues = data.map(function(d) { 
                     return d.max; 
                 });
-                let maxData = Math.max.apply(null, maxValues);
+                let maxData = Math.max.apply(null, maxValues); 
                 const k = diagHeight / maxData * 0.9; 
                 for (let i = 0; i < bars.length; i++) { 
-                    const bar = bars[i]; 
+                    const bar = bars[i];
                     const minTemp = data[i].min; 
                     const maxTemp = data[i].max; 
                     const barHeightMin = k * minTemp; 
@@ -105,6 +105,7 @@
                     bar.innerHTML =  
                     '<div class="max-temp" style="height: ' + barHeightMax + 'px">' + 
                         '<span class="temp-label">' + maxTemp + '°C</span>' + 
+                    '</div>' +
                     '<div class="min-temp" style="height: ' + barHeightMin + 'px">' + 
                         '<span class="temp-label">' + minTemp + '°C</span>' + 
                     '</div>';
@@ -116,7 +117,7 @@
                 const infoDiv = document.getElementById('selectedDayInfo'); 
                 if (day >= 1 && day <= 30) { 
                     const bars = document.getElementsByClassName('bar'); 
-                    Array.from(bars).forEach(function(bar) {
+                    Array.from(bars).forEach(function(bar) { 
                         bar.classList.remove('highlight'); 
                     });
                     const selectedBar = bars[day - 1]; 
@@ -125,7 +126,7 @@
                     infoDiv.textContent = 'День ' + day + ': Мин ' + dayData.min + '°C, Макс ' + dayData.max + '°C';
                 } else { 
                     infoDiv.textContent = ''; 
-                    Array.from(bars).forEach(function(bar) { 
+                    Array.from(bars).forEach(function(bar) {
                         bar.classList.remove('highlight'); 
                     });
                 }
