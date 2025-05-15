@@ -34,7 +34,7 @@
                 font-size: 24px;
                 font-weight: bold;
                 position: relative;
-                left: 42%;
+                left: 37%;
             }
             #a, #b,#c {
                 display: inline-block ;
@@ -88,9 +88,7 @@
                 }
 
             }
-            function table() {
-                showMutipleTable()
-            }
+            
         </script>
     </head>
     <body onload="showMutipleTable()">
@@ -104,7 +102,7 @@
             <label >Умножить на:<input type="number" value="7" id="a"><br></label>
             <label>Начать с: <input type="number"  value="1" id="b"><br></label>
             <label>Закончить на: <input type="number"  value="10"id="c"><br></label>
-            <input id="t" type="button" value="Таблица" style="margin: 5px;"onclick="table()" >
+            <input id="t" type="button" value="Таблица" style="margin: 5px;"onclick=" showMutipleTable()" >
         </main>
         <footer>
             <hr>

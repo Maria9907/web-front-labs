@@ -90,7 +90,7 @@
                 const bars = document.getElementsByClassName('bar'); 
                 const diagHeight = document.getElementById('chartContainer').clientHeight; 
                 
-                var maxValues = data.map(function(d) { 
+                const maxValues = data.map(function(d) { 
                     return d.max; 
                 });
                 let maxData = Math.max.apply(null, maxValues); 
