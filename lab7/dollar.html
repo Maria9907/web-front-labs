@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Матюшкина Мария Дмитриевна. Лабораторная 7</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../index.html" type="image/x-icon">
+        <link rel=" icon" href="../favicon-16x16.png">
+        <link rel=" icon" href="../favicon-32x32.png">
+        <script>
+            function showExchange() {
+                const exchange = [
+                51.4401, 51.8682,  51.8600, 52.5385, 52.8744, 53.2594, 53.2054, 53.6917, 52.7014, 52.1681
+                ];
+            }
+            let table = document.getElementById('dollar-table');
+            for(let i =0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 7
+            <hr>
+        </header>
+        <main>
+          <button onclick="showExchange()">Курс доллара</button>
+          <table border="1" id=" dollar-table"></table>
+          <div id="detail"></div>
+        </main>
+        </main>
+        <footer>
+            <hr>
+            &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
+        </footer>
+    </body>
+</html>
