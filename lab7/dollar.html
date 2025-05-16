@@ -14,7 +14,7 @@
                 let table = document.getElementById('dollar-table');
                 table.style.height = '20%';
                 table.style.width = '20%';
-                table.style.margin = '10px';
+                table.style.margin = '20px auto';
                 table.style.boxShadow = '0 0 10px white';
                 table.style.borderRadius = '10px';
                 for(let i =0; i < exchange.length; i++) {
@@ -32,7 +32,7 @@
                 let average = sum / exchange.length;
                 average = average.toFixed(2);
                
-                document.getElementById('detail').innerText = 'Среднее значение курса: ' + average;
+                document.getElementById('detail').innerText = 'Среднее значение курса: ' + average + ' RUB';
                 
                 let button = document.querySelector('button');
                 button.style.display = 'none';
@@ -60,6 +60,7 @@
                 transition: 0.3s;
                 background-color: rgb(73, 11, 11);
                 box-shadow: 0 0 5px #000;
+                
             }
             h2 {
                 text-align: center;

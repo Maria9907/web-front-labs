@@ -45,11 +45,13 @@
                             <p><b>Текущий курс:</b> ${euroRate.toFixed(4)} RUB</p>
                             <p><b>Предыдущий курс:</b> ${previousRate.toFixed(4)} RUB</p>
                             <p class="rate-change ${rateChangeClass}"><b>Изменение курса:</b> ${rateChangeText}</p>
-                            
+                            <div id="cbr-link"><a href="https://www.cbr-xml-daily.ru/">Условия использования ресурса</a></div>
                         </div>
-                       <div id="cbr-link"><a href="https://www.cbr-xml-daily.ru/">Условия использования ресурса</a></div>
+                       
                     `; })
+                    document.querySelector('button').style.display = 'none';
             }
+
         </script>
         <style>
             #euro-info {
@@ -75,9 +77,7 @@
                 background-color:  rgb(244, 175, 175);
                 box-shadow: 0 0 5px #000; 
             }
-            #cbr-link {
-                text-align: center;
-            }
+           
         </style>
     </head>
     <body>
