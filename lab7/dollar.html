@@ -8,22 +8,71 @@
         <link rel="shortcut icon" href="../index.html" type="image/x-icon">
         <link rel=" icon" href="../favicon-16x16.png">
         <link rel=" icon" href="../favicon-32x32.png">
+        <script src="dollar-data.js"></script>
         <script>
             function showExchange() {
-                const exchange = [
-                51.4401, 51.8682,  51.8600, 52.5385, 52.8744, 53.2594, 53.2054, 53.6917, 52.7014, 52.1681
-                ];
-            }
-            let table = document.getElementById('dollar-table');
-            for(let i =0; i < exchange.length; i++) {
-                let tr = document.createElement('tr');
-                let td = document.createElement('td');
-                td.innerText = exchange[i];
-                tr.appendChild(td);
-                table.appendChild(tr);
+                let table = document.getElementById('dollar-table');
+                table.style.height = '20%';
+                table.style.width = '20%';
+                table.style.margin = '10px';
+                table.style.boxShadow = '0 0 10px white';
+                table.style.borderRadius = '10px';
+                for(let i =0; i < exchange.length; i++) {
+                    let tr = document.createElement('tr');
+                    let td = document.createElement('td');
+                    td.innerText = exchange[i];
+                    tr.appendChild(td);
+                    table.appendChild(tr);
 
+                }
+                let sum = 0;
+                for(let i = 0; i < exchange.length; i++) {
+                    sum += exchange[i];
+                }
+                let average = sum / exchange.length;
+                average = average.toFixed(2);
+               
+                document.getElementById('detail').innerText = 'Среднее значение курса: ' + average;
+                
+                let button = document.querySelector('button');
+                button.style.display = 'none';
             }
         </script>
+        <style>
+            
+            td, button{
+                background-color: maroon;
+                border-radius: 5px;
+                box-shadow: 0 0 10px white;
+                padding:  10px;
+                color: #ffffff;
+                text-align: center;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                
+            }
+            #detail {
+                
+                margin: 10px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: bold;
+            }
+            button:hover {
+                transition: 0.3s;
+                background-color: rgb(73, 11, 11);
+                box-shadow: 0 0 5px #000;
+            }
+            h2 {
+                text-align: center;
+                background-color: maroon;
+                border-radius: 5px;
+                box-shadow: 0 0 10px white;
+                padding:  10px;
+                color: #ffffff;
+                text-align: center;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            
+        </style>
     </head>
     <body>
         <header>
@@ -31,11 +80,12 @@
             <hr>
         </header>
         <main>
+            <h2 >Курс доллара с 01.04.2025-12.04.2025</h2>
           <button onclick="showExchange()">Курс доллара</button>
-          <table border="1" id=" dollar-table"></table>
+          <table border="1"  id="dollar-table"></table>
           <div id="detail"></div>
         </main>
-        </main>
+       
         <footer>
             <hr>
             &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
