@@ -32,8 +32,6 @@
                                 temp20 = temperatures[i];
                             } 
                         }
-
-                        
                         let weatherInfoHtml = `
                             <div id="weather-info">
                                 <h2>Прогноз погоды на сегодня</h2>
@@ -43,14 +41,10 @@
                                 <p>Данные предоставлены <a href="https://open-meteo.com/en/docs">Open-Meteo</a></p>
                             </div>
                         `;
-    
                         document.getElementById('weather-forecast').innerHTML = weatherInfoHtml;
     
-                        
                         document.querySelector('button').style.display = 'none';
                     })
-                    
-                    
             }
         </script>
         <style>

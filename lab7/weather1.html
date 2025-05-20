@@ -10,8 +10,6 @@
         <link rel=" icon" href="../favicon-32x32.png">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <style>
-            
-    
             .chart-container {
                 width: 80%;
                 margin: 20px auto;
@@ -21,7 +19,6 @@
                 border: 2px solid maroon;
                 box-shadow: 0 0 10px white;
             }
-    
             .current-weather, h1 {
                 margin: 10px;
                 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -47,19 +44,16 @@
                     
                     const currentTemperature = data.current.temperature_2m;
                     const currentHumidity = data.current.relative_humidity_2m;
-
-                    
+ 
                     document.querySelector('#current-temperature').textContent = currentTemperature;
                     document.querySelector('#current-humidity').textContent = currentHumidity;
 
-                    
                     const hourlyData = data.hourly;
                     const timeLabels = hourlyData.time.map(function(time) { return new Date(time).toLocaleString() });
                     
                     const temperatureData = hourlyData.temperature_2m;
                     const humidityData = hourlyData.relative_humidity_2m;
 
-                    
                     const ctx = document.getElementById('weatherChart').getContext('2d');
                     const weatherChart = new Chart(ctx, {
                         type: 'bar',
@@ -99,7 +93,6 @@
             <div class="chart-container">
                 <canvas id="weatherChart"></canvas>
             </div>
-            
         </main>
         
         <footer>
