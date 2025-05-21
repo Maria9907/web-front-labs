@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Матюшкина Мария Дмитриевна. Лабораторная 8</title>
-        <link rel="stylesheet" href="../main.css">
+        
         <link rel="shortcut icon" href="../index.html" type="image/x-icon">
         <link rel=" icon" href="../favicon-16x16.png">
         <link rel=" icon" href="../favicon-32x32.png">
@@ -31,15 +31,19 @@
                 <div>Телефон:  {{ user.tel }}</div>
 
                 <hr>
+                <div class="card" style="width: 18rem;">
+                    <div class="cad-body">
+                        <h2 class="card-title">Цветы</h2>
+                        <ul class="list-group">
+                            <li v-for="(flower, id) in flowers" class="list-group-item">
+                                {{ flower }} <button @click="edit(id, flower)">?</button>
 
-                <h2>Цветы</h2>
-                <ul class="list-group">
-                    <li v-for="(flower, id) in flowers" class="list-group-item">
-                        {{ flower }} <button @click="edit(id, flower)">?</button>
-
-                    </li>
-                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <hr>
+                
                 <h2>Цветы</h2>
                 <table class=" table table-dark">
                     <thead>
