@@ -8,7 +8,7 @@
         <link rel="shortcut icon" href="../index.html" type="image/x-icon">
         <link rel=" icon" href="../favicon-16x16.png">
         <link rel=" icon" href="../favicon-32x32.png">
-        
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
     <body>
         <header>
@@ -16,13 +16,12 @@
             <hr>
         </header>
         <main>
-            <li><a href="bloks.html"> Блоки</a></li>
-            <li><a href="dollar.html"> Курс доллара</a></li>
-            <li><a href="cot.html"> Котировки акций компании ТГК-1</a></li>
-            <li><a href="euro.html"> Курс Евро</a></li>
-            <li><a href="weather.html"> Прогноз погоды</a></li>
-            <li><a href="weather1.html"> Дополнительное задание</a></li>
+            <div id="app">
+                <h1 :title="messageRus">{{message}}</h1>
 
+
+
+            </div>
             
         </main>
         </main>
@@ -30,5 +29,16 @@
             <hr>
             &copy; Матюшкина Мария, ФБИ-32, 2 курс, 2025
         </footer>
+
+        <script>
+            Vue.createApp({
+                data() {
+                  return {
+                    message: 'Hello!',
+                    messageRus: 'Привет!',
+                  }
+                },
+            }).mount('#app');      
+        </script>
     </body>
 </html>
